@@ -17,6 +17,7 @@ public class DamageTrigger : MonoBehaviour
    void OnTriggerEnter2D(Collider2D collision)
    {
       player.health -= 10;
+      Destroy(collision.gameObject);
    }
 
 }
