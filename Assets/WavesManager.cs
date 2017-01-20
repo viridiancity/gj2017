@@ -17,8 +17,6 @@ public class WavesManager : MonoBehaviour
    {
       if (Input.GetButtonDown("Fire1"))
       {
-         Debug.Log("Hello!?");
-
          Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
          instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
 

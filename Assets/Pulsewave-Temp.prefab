@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4562748282345092}
   - component: {fileID: 95350193632729536}
   - component: {fileID: 212472790200722486}
-  - component: {fileID: 249804554110775448}
-  - component: {fileID: 58469400131555666}
   - component: {fileID: 114919497986921176}
+  - component: {fileID: 250567540002110668}
+  - component: {fileID: 61760280125327558}
   m_Layer: 0
   m_Name: Pulsewave-Temp
   m_TagString: Untagged
@@ -38,14 +38,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1622436345367386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5646224, y: -1.9122994, z: 0}
+  m_LocalPosition: {x: 0.84, y: 2.65, z: 0}
   m_LocalScale: {x: 0.2026162, y: 0.2026162, z: 0.2026162}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58469400131555666
-CircleCollider2D:
+--- !u!61 &61760280125327558
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -55,9 +55,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 1
-  m_Offset: {x: -0, y: 0.03}
+  m_Offset: {x: 0, y: 0.03}
   serializedVersion: 2
-  m_Radius: 0.23
+  m_Size: {x: 0.54, y: 0.49}
 --- !u!95 &95350193632729536
 Animator:
   serializedVersion: 3
@@ -121,9 +121,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!249 &249804554110775448
-AreaEffector2D:
-  serializedVersion: 2
+--- !u!250 &250567540002110668
+PointEffector2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -133,10 +132,11 @@ AreaEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGlobalAngle: 1
-  m_ForceAngle: 0
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 150
   m_ForceVariation: 0
-  m_ForceTarget: 0
+  m_DistanceScale: 5
+  m_ForceSource: 1
+  m_ForceTarget: 1
+  m_ForceMode: 1
   m_Drag: 0
   m_AngularDrag: 0

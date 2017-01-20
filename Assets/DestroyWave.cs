@@ -7,7 +7,6 @@ public class DestroyWave : MonoBehaviour
 
    public void DestroyWaveAfterAnimation()
    {
-      Debug.Log("Wave Destroying");
       Destroy(gameObject);
    }
 }

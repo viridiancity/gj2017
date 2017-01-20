@@ -12,4 +12,10 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnMouseUp()
+    {
+        Debug.Log("Drag ended!");
+    }
+
 }
