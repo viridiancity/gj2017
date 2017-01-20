@@ -4,14 +4,22 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
+<<<<<<< HEAD
   productGUID: 63d1090e0851605489f4c198effdcbbd
+=======
+  productGUID: 11cba40b970315b43a9615f6aff4cd59
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: GGJ2017-Unity-2
+=======
+  productName: GGJ2017-Unity
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -29,7 +37,10 @@ PlayerSettings:
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
+<<<<<<< HEAD
   tizenShowActivityIndicatorOnLoading: -1
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
@@ -45,7 +56,10 @@ PlayerSettings:
   runInBackground: 0
   captureSingleScreen: 0
   Override IPod Music: 0
+<<<<<<< HEAD
   muteOtherAudioSources: 0
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   Prepare IOS For Recording: 0
   submitAnalytics: 1
   usePlayerLog: 1
@@ -76,7 +90,10 @@ PlayerSettings:
   ignoreAlphaClear: 0
   xboxOneResolution: 0
   xboxOneMonoLoggingLevel: 0
+<<<<<<< HEAD
   xboxOneLoggingLevel: 1
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   ps3SplashScreen: {fileID: 0}
   videoMemoryForVertexBuffers: 0
   psp2PowerMode: 0
@@ -125,7 +142,10 @@ PlayerSettings:
   iPhoneTargetOSVersion: 24
   tvOSSdkVersion: 0
   tvOSTargetOSVersion: 900
+<<<<<<< HEAD
   tvOSRequireExtendedGameController: 0
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -146,7 +166,10 @@ PlayerSettings:
   tvOSSmallIconLayers: []
   tvOSLargeIconLayers: []
   tvOSTopShelfImageLayers: []
+<<<<<<< HEAD
   tvOSTopShelfImageWideLayers: []
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   iOSLaunchScreenType: 0
   iOSLaunchScreenPortrait: {fileID: 0}
   iOSLaunchScreenLandscape: {fileID: 0}
@@ -166,7 +189,10 @@ PlayerSettings:
   iOSLaunchScreeniPadCustomXibPath: 
   iOSDeviceRequirements: []
   iOSURLSchemes: []
+<<<<<<< HEAD
   appleDeveloperTeamID: 
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -202,15 +228,22 @@ PlayerSettings:
   wiiUSystemHeapSize: 128
   wiiUTVStartupScreen: {fileID: 0}
   wiiUGamePadStartupScreen: {fileID: 0}
+<<<<<<< HEAD
   wiiUDrcBufferDisabled: 0
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   wiiUProfilerLibPath: 
   actionOnDotNetUnhandledException: 1
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
+<<<<<<< HEAD
   cameraUsageDescription: 
   locationUsageDescription: 
   microphoneUsageDescription: 
+=======
+  locationUsageDescription: 
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   XboxTitleId: 
   XboxImageXexPath: 
   XboxSpaPath: 
@@ -250,8 +283,12 @@ PlayerSettings:
   ps4AppType: 0
   ps4ParamSfxPath: 
   ps4VideoOutPixelFormat: 0
+<<<<<<< HEAD
   ps4VideoOutInitialWidth: 1920
   ps4VideoOutReprojectionRate: 120
+=======
+  ps4VideoOutResolution: 4
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   ps4PronunciationXMLPath: 
   ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
@@ -280,18 +317,27 @@ PlayerSettings:
   ps4pnFriends: 1
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
+<<<<<<< HEAD
   ps4UseResolutionFallback: 0
   restrictedAudioUsageRights: 0
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
   ps4SocialScreenEnabled: 0
   ps4ScriptOptimizationLevel: 3
+=======
+  ps4ReprojectionSupport: 0
+  ps4UseAudio3dBackend: 0
+  ps4SocialScreenEnabled: 0
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   ps4Audio3dVirtualSpeakerCount: 14
   ps4attribCpuUsage: 0
   ps4PatchPkgPath: 
   ps4PatchLatestPkgPath: 
   ps4PatchChangeinfoPath: 
+<<<<<<< HEAD
   ps4PatchDayOne: 0
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   ps4attribUserManagement: 0
   ps4attribMoveSupport: 0
   ps4attrib3DSupport: 0
@@ -350,14 +396,22 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
+<<<<<<< HEAD
   metroPackageName: GGJ2017-Unity-2
+=======
+  metroPackageName: GGJ2017-Unity
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: GGJ2017-Unity-2
+=======
+  metroApplicationDescription: GGJ2017-Unity
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -366,7 +420,11 @@ PlayerSettings:
   metroLargeTileShowName: 0
   metroWideTileShowName: 0
   metroDefaultTileSize: 1
+<<<<<<< HEAD
   metroTileForegroundText: 1
+=======
+  metroTileForegroundText: 2
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
@@ -381,7 +439,10 @@ PlayerSettings:
   tizenSigningProfileName: 
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
+<<<<<<< HEAD
   tizenMinOSVersion: 0
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   n3dsUseExtSaveData: 0
   n3dsCompressStaticMem: 1
   n3dsExtSaveDataNumber: 0x12345
@@ -418,10 +479,17 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
+<<<<<<< HEAD
   - Standalone::ScriptingBackend
   - WebPlayer::ScriptingBackend
   Standalone::ScriptingBackend: 0
   WebPlayer::ScriptingBackend: 0
+=======
+  - Android::ScriptingBackend
+  - Standalone::ScriptingBackend
+  Android::ScriptingBackend: 0
+  Standalone::ScriptingBackend: 0
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   boolPropertyNames:
   - Android::VR::enable
   - Metro::VR::enable
@@ -438,7 +506,10 @@ PlayerSettings:
   - WiiU::VR::enable
   - Xbox360::VR::enable
   - XboxOne::VR::enable
+<<<<<<< HEAD
   - XboxOne::enus
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   - iOS::VR::enable
   - tvOS::VR::enable
   Android::VR::enable: 0
@@ -456,7 +527,10 @@ PlayerSettings:
   WiiU::VR::enable: 0
   Xbox360::VR::enable: 0
   XboxOne::VR::enable: 0
+<<<<<<< HEAD
   XboxOne::enus: 1
+=======
+>>>>>>> 98347f39e227b057a56fb771cd7ff863ba95c8e6
   iOS::VR::enable: 0
   tvOS::VR::enable: 0
   stringPropertyNames:
