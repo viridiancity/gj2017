@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212472790200722486}
   - component: {fileID: 249804554110775448}
   - component: {fileID: 58469400131555666}
+  - component: {fileID: 114919497986921176}
   m_Layer: 0
   m_Name: Pulsewave-Temp
   m_TagString: Untagged
@@ -52,7 +53,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 1
   m_Offset: {x: -0, y: 0.03}
   serializedVersion: 2
@@ -74,6 +75,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114919497986921176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1622436345367386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e78cd4c5a4f82644befcc978e8a3a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212472790200722486
 SpriteRenderer:
   m_ObjectHideFlags: 1

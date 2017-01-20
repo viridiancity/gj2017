@@ -341,7 +341,6 @@ GameObject:
   m_Component:
   - component: {fileID: 660901538}
   - component: {fileID: 660901537}
-  - component: {fileID: 660901539}
   m_Layer: 0
   m_Name: WaterBackground-Temp
   m_TagString: Untagged
@@ -397,18 +396,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &660901539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 660901536}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.8, y: 17, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &768560291
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,11 +522,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4562748282345092, guid: 8b0d972df2abae54baaff14d146d9791, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.5646224
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 4562748282345092, guid: 8b0d972df2abae54baaff14d146d9791, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.9122994
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 4562748282345092, guid: 8b0d972df2abae54baaff14d146d9791, type: 2}
       propertyPath: m_LocalPosition.z
@@ -568,19 +555,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b0d972df2abae54baaff14d146d9791, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1844757613 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1622436345367386, guid: 8b0d972df2abae54baaff14d146d9791,
-    type: 2}
-  m_PrefabInternal: {fileID: 1844757612}
---- !u!114 &1844757614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1844757613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e78cd4c5a4f82644befcc978e8a3a1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
