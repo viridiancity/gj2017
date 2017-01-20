@@ -100,6 +100,7 @@ GameObject:
   - 4: {fileID: 267922324}
   - 212: {fileID: 267922323}
   - 114: {fileID: 267922325}
+  - 114: {fileID: 267922326}
   m_Layer: 0
   m_Name: Boat-Temp
   m_TagString: Untagged
@@ -164,7 +165,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc66000383de0314c875bbc22d0794ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endPosition: {fileID: 1353226301}
   speed: 2
+  movingDirection: 1
+--- !u!114 &267922326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267922322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042cb548ee70ecc44a82eacb75b392e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1000011750652192, guid: 128f0c9ac1d3fa948926b64a6262a231,
+    type: 2}
+  minAttackDelay: 1
+  maxAttackDelay: 3
 --- !u!1 &367155866
 GameObject:
   m_ObjectHideFlags: 0
