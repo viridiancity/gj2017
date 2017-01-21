@@ -8,11 +8,13 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
     public string side;
     public GameObject sub;
-    public GameObject SubmarineTarget;
+    public GameObject SubmarineTarget00;
+    public GameObject SubmarineTarget01;
+    public GameObject SubmarineTarget02;
     //public GameObject shipfact;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Spawn();
 	}
 	
@@ -26,14 +28,14 @@ public class SubmarineSpawnScript : MonoBehaviour {
         GameObject o = Instantiate(sub);
         if ( side == "Right")
         {
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget.transform.localPosition, "LEFT");
+            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "LEFT");
             
         } else if ( side == "Left")
         {
             
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget.transform.localPosition, "RIGHT");
+            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "RIGHT");
         }
-        o.transform.localPosition = transform.localPosition;
+        o.transform.localPosition = transform.position;
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
         //GameObject s = Instantiate(sub, transform.localPositionm, Quaternion.identity);
