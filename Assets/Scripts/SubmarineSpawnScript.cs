@@ -36,6 +36,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
         nextmaxSpawn = tLastSpawn + maxSpawnTime;
         // debug spawn
         activeSubs = 0;
+        sub = Instantiate(sub);
         active = true;
         Spawn();
 	}
@@ -44,13 +45,13 @@ public class SubmarineSpawnScript : MonoBehaviour {
 	void Update () {
 
         // check if any subs are inactive
-        foreach ( GameObject s in subList ){
+        /*foreach ( GameObject s in subList ){
             if ( s.GetComponent<SubmarineScript>().isOffScreen() )
             {
                 subList.Remove(s);
                 activeSubs = Mathf.Max(activeSubs--, 0);
             }
-        }
+        }*/
 
         if (active)
         {
@@ -102,8 +103,8 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
     void Spawn() // does not necessarily need to differentiate
     {
-        sub = Instantiate(sub);
-
+        //sub = Instantiate(sub);
+        
         GameObject target;
         switch ( ( (int) Random.Range(15,30000) ) % 2 ){
             case 0:
@@ -129,6 +130,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
             t.y = target.transform.position.y;
             sub.GetComponent<SubmarineScript>().init(t, target.transform.position, "RIGHT");
         }
+        //sub = o;
         //subList.Add(o);
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
