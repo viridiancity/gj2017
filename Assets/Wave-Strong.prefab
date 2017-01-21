@@ -117,7 +117,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1096755141
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c091f64e99d4d04ab1aa7265fababd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dc2e978587706b4682f03f2afebc271, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: 150
+  m_ForceMagnitude: 1500
   m_ForceVariation: 0
   m_DistanceScale: 5
   m_ForceSource: 1
