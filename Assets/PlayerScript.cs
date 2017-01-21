@@ -23,8 +23,8 @@ public class PlayerScript : MonoBehaviour
     {
         if (charging)
         {
-            current = Vector3.Lerp(start, end, lTime);
-            transform.localScale = Vector3.Lerp(start, end, lTime);
+            current = Vector3.Lerp(start, endScale, lTime);
+            transform.localScale = Vector3.Lerp(start, endScale, lTime);
             lTime += Time.deltaTime;
 
         }
