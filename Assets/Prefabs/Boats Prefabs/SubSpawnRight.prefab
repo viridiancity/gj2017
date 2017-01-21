@@ -19,8 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4864179971050280}
+  - component: {fileID: 114221511329055496}
   m_Layer: 0
-  m_Name: SubmarineSpawnRight
+  m_Name: SubSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,3 +40,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114221511329055496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906646695569506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4d4e303220b624a9faf7944c42eb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 0
+  side: Right
+  sub: {fileID: 1104903410112250, guid: bf304183acc931f40be1d6816c1d7cb0, type: 2}
+  SubmarineTarget: {fileID: 0}

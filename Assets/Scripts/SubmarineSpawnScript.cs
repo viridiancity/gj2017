@@ -13,7 +13,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Spawn();
 	}
 	
 	// Update is called once per frame
@@ -27,12 +27,13 @@ public class SubmarineSpawnScript : MonoBehaviour {
         if ( side == "Right")
         {
             o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget.transform.localPosition, "LEFT");
+            
         } else if ( side == "Left")
         {
             
             o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget.transform.localPosition, "RIGHT");
         }
-
+        o.transform.localPosition = transform.localPosition;
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
         //GameObject s = Instantiate(sub, transform.localPositionm, Quaternion.identity);
