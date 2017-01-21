@@ -11,17 +11,40 @@ public class SubmarineSpawnScript : MonoBehaviour {
     public GameObject SubmarineTarget00;
     public GameObject SubmarineTarget01;
     public GameObject SubmarineTarget02;
+
+    public float minSpawnTime;
+    public float maxSpawnTime;
     //public GameObject shipfact;
+
+    private bool active;
+
+    private float tLastSpawn;
 
     // Use this for initialization
     void Start () {
+        active = false;
+        tLastSpawn = 0;
+
+        // debug spawn
         Spawn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        if ( active)
+        {
+
+            if ( tLastSpawn > minSpawnTime)
+            {
+                // random chance of spawning
+
+            }
+
+        }
+
+
+    }
 
     void Spawn() // does not necessarily need to differentiate
     {
