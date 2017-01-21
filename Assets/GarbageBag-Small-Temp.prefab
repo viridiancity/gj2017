@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212868269829970442}
   - component: {fileID: 60703149319269636}
   - component: {fileID: 50956870745722410}
+  - component: {fileID: 114148744578594324}
   m_Layer: 0
   m_Name: GarbageBag-Small-Temp
   m_TagString: Garbage Bag
@@ -68,7 +69,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392641181735004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -95,6 +96,18 @@ PolygonCollider2D:
       - {x: 0.32999998, y: -0.4}
       - {x: 0.39, y: -0.35}
       - {x: 0.39, y: -0.26}
+--- !u!114 &114148744578594324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392641181735004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2f7635ac74da644825f45698d7b2d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.1
 --- !u!212 &212868269829970442
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -125,7 +138,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b8c217ec6f794d44ba62de4cb8805df8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

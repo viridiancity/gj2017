@@ -25,9 +25,7 @@ public class DropProjectile : MonoBehaviour
       float delay = Random.Range(minAttackDelay, maxAttackDelay);
       yield return new WaitForSeconds(delay);
 
-
-
-      GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+      GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
       projectile.GetComponent<Rigidbody2D>().AddTorque(10f);
       StartCoroutine(DelayThenAttack());
 

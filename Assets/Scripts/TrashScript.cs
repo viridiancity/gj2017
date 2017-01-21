@@ -31,7 +31,7 @@ public class TrashScript : MonoBehaviour
       {
          for (int i = 0; i < amountToSpawn; i++)
          {
-            GameObject smallTrash = Instantiate(smallTrashPrefab, transform.position, Quaternion.identity);
+            GameObject smallTrash = Instantiate(smallTrashPrefab, transform.position, Quaternion.identity) as GameObject;
 
             float xForce = Random.Range(-5f, 5f);
             float yForce = Random.Range(0f, 5f);
