@@ -11,7 +11,7 @@ public class TorpedoScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         state = STATE.SPAWN;
-            fire();
+        fire();
         state = STATE.ASCENDING;
 	}
 	
@@ -22,7 +22,7 @@ public class TorpedoScript : MonoBehaviour {
         {
             case STATE.ASCENDING:
                 // fire to peak target
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-0.5f, 160));
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(50, 400));
 
                 if ( transform.localPosition.y > ythresh)
                 {
@@ -44,5 +44,11 @@ public class TorpedoScript : MonoBehaviour {
     {
 
     }
+
+    public void init(Vector3 start)
+    {
+        transform.position = start;
+    }
+
 
 }

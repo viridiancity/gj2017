@@ -72,7 +72,8 @@ public class SubmarineScript : MonoBehaviour {
     {
         Debug.Log("Fire !");
         Vector3 sp = transform.localPosition;
-        //Instantiate(torpedo, transform.localPosition);
+        torpedo.GetComponent<TorpedoScript>().init(transform.position);
+        Instantiate(torpedo, transform);
     }
 
     public void init(Vector3 startpos, Vector3 target, string dir)
