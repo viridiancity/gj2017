@@ -9,74 +9,57 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013748813380}
+  m_RootGameObject: {fileID: 1811866239705954}
   m_IsPrefabParent: 1
---- !u!1 &1000013748813380
+--- !u!1 &1811866239705954
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4000010090850598}
-  - component: {fileID: 212000011626009684}
-  - component: {fileID: 114034703753775476}
-  - component: {fileID: 65791662704709832}
+  - component: {fileID: 4321943032089314}
+  - component: {fileID: 212102438327080138}
+  - component: {fileID: 114499472680163398}
   m_Layer: 0
-  m_Name: Poseidon
-  m_TagString: Player
+  m_Name: Wipeout
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010090850598
+--- !u!4 &4321943032089314
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013748813380}
+  m_GameObject: {fileID: 1811866239705954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: -8.18, z: 0.07548735}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.25, y: 6.5, z: 1.25}
+  m_LocalScale: {x: 1.19, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65791662704709832
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013748813380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.93, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114034703753775476
+--- !u!114 &114499472680163398
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013748813380}
+  m_GameObject: {fileID: 1811866239705954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13f2363a34ba0f489ed459aa7b6978a, type: 3}
+  m_Script: {fileID: 11500000, guid: b2c786c939c55ce499e164f41204b0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  endScale: {x: 1.25, y: 1.25, z: 1.25}
-  chargeTime: 1
-  wipeoutObj: {fileID: 1811866239705954, guid: 673e182fde8e858408c8652594507083, type: 2}
-  endWPos: {x: 0, y: 6.5, z: 1}
-  startWPos: {x: 0, y: -11, z: 1}
---- !u!212 &212000011626009684
+  endWPos: {x: 1.25, y: 6.5, z: 1.25}
+  startWPos: {x: 1, y: -11, z: 1}
+--- !u!212 &212102438327080138
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013748813380}
+  m_GameObject: {fileID: 1811866239705954}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -101,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 31900c9aefdd9aa429bc0e0be5da73f0, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 42365b954e44d6547b962b34a51e1b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
