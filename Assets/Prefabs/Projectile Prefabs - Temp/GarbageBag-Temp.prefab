@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60150528796239890}
   - component: {fileID: 50419394387770504}
   - component: {fileID: 114120348775333798}
+  - component: {fileID: 114442942483561164}
   m_Layer: 0
   m_Name: GarbageBag-Temp
   m_TagString: Garbage Bag
@@ -111,6 +112,17 @@ MonoBehaviour:
     type: 2}
   amountToSpawn: 2
   explosionForce: 9
+--- !u!114 &114442942483561164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310182409976344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319af05cc407336428d657478f339135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212393825069695562
 SpriteRenderer:
   m_ObjectHideFlags: 1

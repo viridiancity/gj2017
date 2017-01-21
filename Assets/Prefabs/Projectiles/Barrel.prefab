@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50501744788582276}
   - component: {fileID: 114738922694853350}
   - component: {fileID: 60406464593076276}
+  - component: {fileID: 114036281812889842}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Waste Barrell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +126,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114036281812889842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625118491453516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319af05cc407336428d657478f339135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114738922694853350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665d773ea800be646a64b4dec681e5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 0
 --- !u!212 &212541383421999448
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b148829228a86f442810dd5ce4fff96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoatsplosionPrefab: {fileID: 1085989652085778, guid: aceda0a26ea1afa4394248ecfa589279,
+    type: 2}
 --- !u!212 &212233622532426040
 SpriteRenderer:
   m_ObjectHideFlags: 1
