@@ -34,12 +34,19 @@ public class EnemyLevelWaveManager : MonoBehaviour
 
    void SpawnWave1()
    {
+      DelayedSpawnBoat(BarrelBoatPrefab, 0f);
+   }
 
+   void SpawnWave2()
+   {
+      DelayedSpawnBoat(BarrelBoatPrefab, 0f);
+      DelayedSpawnBoat(BarrelBoatPrefab, 1f);
+      DelayedSpawnBoat(BarrelBoatPrefab, 2f);
    }
 
    IEnumerator DelayedSpawnBoat(GameObject prefab, float delay)
    {
       yield return new WaitForSeconds(delay);
-
+      Instantiate(prefab, spawnPosition.position, Quaternion.identity);
    }
 }
