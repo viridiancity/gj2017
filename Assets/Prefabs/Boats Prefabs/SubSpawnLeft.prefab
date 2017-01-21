@@ -142,5 +142,5 @@ MonoBehaviour:
   side: Left
   sub: {fileID: 1104903410112250, guid: bf304183acc931f40be1d6816c1d7cb0, type: 2}
   SubmarineTarget00: {fileID: 1754822655681630}
-  SubmarineTarget01: {fileID: 0}
-  SubmarineTarget02: {fileID: 0}
+  SubmarineTarget01: {fileID: 1339162099213562}
+  SubmarineTarget02: {fileID: 1602222664776556}
