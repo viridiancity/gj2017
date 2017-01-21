@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoatScript : MonoBehaviour
 {
+   public GameObject BoatsplosionPrefab;
 
    private void OnCollisionEnter2D(Collision2D collision)
    {
@@ -16,6 +17,9 @@ public class BoatScript : MonoBehaviour
           tag == "CementLegGuy")
       {
          EnemyLevelWaveManager.instance.numEnemies = EnemyLevelWaveManager.instance.numEnemies - 1;
+
+         Vector3 instantiatePos = new Vector3(transform.position.x, transform.position.y + 1.15f, 0f);
+         Instantiate(BoatsplosionPrefab, instantiatePos, Quaternion.identity);
          Destroy(gameObject);
       }
    }

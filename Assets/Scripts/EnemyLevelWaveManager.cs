@@ -19,6 +19,8 @@ public class EnemyLevelWaveManager : MonoBehaviour
    public GameObject BarrelBoatPrefab;
    public GameObject GarbageBoatPrefab;
    public GameObject MineBoatPrefab;
+   public GameObject TorpedoPrefab;
+   public GameObject MafiaPrefab;
 
    List<GameObject> boats;
    int enemyWaveNum = 0;
