@@ -26,12 +26,12 @@ public class PlayerScript : MonoBehaviour
     {
         if (isWipeout)
         {
-
-            if ( gameObject.GetComponent<WipeoutScript>().ended == true)
+            if (wipeoutObj.GetComponent<WipeoutScript>().ended == true)
             {
                 // wipeout ended, else, in progress
-                gameObject.GetComponent<WipeoutScript>().reset();
+                wipeoutObj.GetComponent<WipeoutScript>().reset();
                 isWipeout = false;
+                charging = false;
             }
 
         } else if (charging)
@@ -61,6 +61,7 @@ public class PlayerScript : MonoBehaviour
 
         }
 
+        transform.localScale = startScale;
         lTime = 0;
         charging = false;
 
@@ -89,6 +90,7 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Wipeout");
         if ( !wipeoutObj.GetComponent<WipeoutScript>().isWipeout )
         {
+            isWipeout = true;
             wipeoutObj.GetComponent<WipeoutScript>().startWipeout();
         }
 
