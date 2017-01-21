@@ -5,12 +5,12 @@ using UnityEngine;
 public class WipeoutScript : MonoBehaviour {
 
     private Vector3 current;
-    public Vector3 endWPos = new Vector3(1, 6.5f, 1);
+    public Vector3 endWPos   = new Vector3(1, 6.5f, 1);
     public Vector3 startWPos = new Vector3(1, -11f, 1);
     private float lTime = 0;
-    public bool isWipeout;
-    public bool started = false;
-    public bool ended = false;
+    public bool isWipeout = false;
+    public bool started   = false;
+    public bool ended     = false;
 
     // Use this for initialization
     void Start () {
@@ -44,7 +44,6 @@ public class WipeoutScript : MonoBehaviour {
         {
             // reset wipeout status
             transform.localPosition = startWPos;
-            //isWipeout = false;
             //charging = false;
             lTime = 0;
             isWipeout = false;
