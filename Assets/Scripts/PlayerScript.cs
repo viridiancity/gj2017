@@ -5,7 +5,6 @@ public class PlayerScript : MonoBehaviour
 {
     public int health;
 
-    
     public Vector3 endScale = new Vector3(1.25f, 1.25f, 1.25f);
 
     private Vector3 startScale = new Vector3(1, 1, 1);
@@ -21,8 +20,14 @@ public class PlayerScript : MonoBehaviour
     public Vector3 endWPos   = new Vector3 (1, 6.5f, 1);
     public Vector3 startWPos = new Vector3(1, -11f, 1);
     private bool isWipeout = false;
+    private Animator animator;
 
-    void Update()
+   private void Start()
+   {
+      animator = GetComponent<Animator>();
+   }
+
+   void Update()
     {
         if (isWipeout)
         {
@@ -48,17 +53,14 @@ public class PlayerScript : MonoBehaviour
             charging = false;
 
         }
-
     }
 
     void OnMouseUp()
     {
-
         if (scharge + lTime >= scharge + chargeTime)
         {
             // fire epic
             WipeOut();
-
         }
 
         transform.localScale = startScale;
@@ -95,5 +97,28 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
-    
+
+   public void ChangeState(float clickThirds)
+   {
+      Debug.Log("<color=red>" + clickThirds + "</color>");
+
+      if (clickThirds < 0.33f)
+      {
+         animator.Play("Left");
+      }
+      else if (clickThirds < 0.66f)
+      {
+         animator.Play("Up");
+      }
+      else
+      {
+         animator.Play("Right");
+      }
+
+   }
+   
+   public void BeginCharging()
+   {
+      animator.Play("Charging");
+   } 
 }
