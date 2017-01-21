@@ -6,19 +6,27 @@ public class WavesManager : MonoBehaviour
 {
    public GameObject waveNormalPrefab;
    public GameObject waveStrongPrefab;
-    float mag = 150f;
+   float mag = 150f;
+
+   private bool pressed;
+   private float pressedtime;
+   private float pressedthresh;
+   private float chargemaxtime;
+   private float pmax;
+   private float pthresh;
+
+   GameObject player;
+   PlayerScript playerScript;
+   
    // Use this for initialization
    void Start()
    {
+      player = GameObject.FindGameObjectWithTag("Player");
+      playerScript = player.GetComponent<PlayerScript>();
         pressedthresh = 0.3f;
         chargemaxtime = 2.5f; //seconds
    }
-    private bool pressed;
-    private float pressedtime;
-    private float pressedthresh;
-    private float chargemaxtime;
-    private float pmax;
-    private float pthresh;
+
     // Update is called once per frame
     void Update()
    {
@@ -32,7 +40,7 @@ public class WavesManager : MonoBehaviour
         } else {
 
             Debug.Log("Fire pressed .. ");
-            
+            playerScript.BeginCharging();
             pressed = true;
             pressedtime = Time.time;
             pthresh = pressedtime + pressedthresh;
@@ -77,6 +85,9 @@ public class WavesManager : MonoBehaviour
     private void instantiatewave(string s)
     {
         Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+      playerScript.ChangeState(Input.mousePosition.x / Screen.width);
+
         instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
         if (s == "normal")
         {
