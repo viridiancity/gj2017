@@ -248,11 +248,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &237264798 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1339162099213562, guid: 01423a1d8a8a30c4c9cd3c629708fbe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 655645205}
 --- !u!1 &267922322
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,11 +587,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &519002584 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1395014069088096, guid: 05c25bc712dfd954cbeb59661a5d7c14,
-    type: 2}
-  m_PrefabInternal: {fileID: 1091353877}
 --- !u!1001 &655645205
 Prefab:
   m_ObjectHideFlags: 0
@@ -636,16 +626,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114979565446720512, guid: 01423a1d8a8a30c4c9cd3c629708fbe2,
-        type: 2}
-      propertyPath: SubmarineTarget01
-      value: 
-      objectReference: {fileID: 237264798}
-    - target: {fileID: 114979565446720512, guid: 01423a1d8a8a30c4c9cd3c629708fbe2,
-        type: 2}
-      propertyPath: SubmarineTarget02
-      value: 
-      objectReference: {fileID: 1000800003}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01423a1d8a8a30c4c9cd3c629708fbe2, type: 2}
   m_IsPrefabParent: 0
@@ -770,11 +750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806a50b9d8b5dd44cb6fe6ee1d17590c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1000800003 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1602222664776556, guid: 01423a1d8a8a30c4c9cd3c629708fbe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 655645205}
 --- !u!1001 &1091353877
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,16 +789,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114221511329055496, guid: 05c25bc712dfd954cbeb59661a5d7c14,
-        type: 2}
-      propertyPath: SubmarineTarget01
-      value: 
-      objectReference: {fileID: 519002584}
-    - target: {fileID: 114221511329055496, guid: 05c25bc712dfd954cbeb59661a5d7c14,
-        type: 2}
-      propertyPath: SubmarineTarget02
-      value: 
-      objectReference: {fileID: 2118376880}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05c25bc712dfd954cbeb59661a5d7c14, type: 2}
   m_IsPrefabParent: 0
@@ -1430,8 +1395,3 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 9.59, y: 3.62}
---- !u!1 &2118376880 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1207442905644200, guid: 05c25bc712dfd954cbeb59661a5d7c14,
-    type: 2}
-  m_PrefabInternal: {fileID: 1091353877}
