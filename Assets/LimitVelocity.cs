@@ -14,8 +14,9 @@ public class LimitVelocity : MonoBehaviour
    }
 
    // Update is called once per frame
-   void Update()
+   void FixedUpdate()
    {
-      //Debug.Log(rb2d.velocity);
+      rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, maxVelocity);
+
    }
 }
