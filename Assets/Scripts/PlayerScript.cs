@@ -20,17 +20,18 @@ public class PlayerScript : MonoBehaviour
     public GameObject wipeoutObj;
     public Vector3 endWPos   = new Vector3 (1, 6.5f, 1);
     public Vector3 startWPos = new Vector3(1, -11f, 1);
-    private bool isWipeout;
+    private bool isWipeout = false;
 
     void Update()
     {
         if (isWipeout)
         {
-            if ( !wipeoutObj.GetComponent<WipeoutScript>().isWipeout )
+            if ( wipeoutObj.GetComponent<WipeoutScript>().isWipeout == false)
             {
                 WipeOut();
-            } if ( wipeoutObj.GetComponent<WipeoutScript>().ended )
+            } if ( wipeoutObj.GetComponent<WipeoutScript>().ended)
             {
+                wipeoutObj.GetComponent<WipeoutScript>().ended = false;
                 isWipeout = false;
             }
 
@@ -121,21 +122,7 @@ public class PlayerScript : MonoBehaviour
             lTime = 0;
             Debug.Log("Reset Wipeout");
         }*/
-    }
 
-    IEnumerator ScaleObject()
-    {
-
-        Debug.Log("scaling!");
-        float scaleDuration = 5;                                //animation duration in seconds
-        Vector3 actualScale = transform.localScale;             // scale of the object at the begining of the animation
-        Vector3 targetScale = new Vector3(1.5f, 1.5f, 1.5f);     // scale of the object at the end of the animation
-
-        for (float t = 0; t < 1; t += Time.deltaTime / scaleDuration)
-        {
-            transform.localScale = Vector3.Lerp(actualScale, targetScale, t);
-            yield return null;
-        }
     }
     
 }
