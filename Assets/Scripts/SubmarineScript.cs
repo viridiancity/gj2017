@@ -9,6 +9,8 @@ public class SubmarineScript : MonoBehaviour {
     private enum SUBSTATE { SPAWNED, TOTARGET, REACHEDTARGET, FROMTARGET, OFFSCREEN};
     private      SUBSTATE state;
     public GameObject torpedo;
+    private Vector3 n;
+    private float lTime;
     // Use this for initialization
     void Start () { }
 	
@@ -19,11 +21,12 @@ public class SubmarineScript : MonoBehaviour {
         {
             case SUBSTATE.SPAWNED:
                 // move to target, fire, move off screen
-
+                lTime = 0;
                 break;
 
             case SUBSTATE.TOTARGET:
-                Vector3 n = Vector3.Lerp(startpos, targetpos, 5f);
+                n = Vector3.Lerp(startpos, targetpos, lTime);
+                lTime += Time.deltaTime;
                 transform.localPosition = n;
                 if (Vector3.Distance ( transform.localPosition, targetpos ) < 0.005f )
                 {
@@ -33,14 +36,23 @@ public class SubmarineScript : MonoBehaviour {
 
             case SUBSTATE.REACHEDTARGET:
                 // fire the sail off
+                lTime = 0;
                 fire();
                 state = SUBSTATE.FROMTARGET;
                 break;
 
             case SUBSTATE.FROMTARGET:
+                n = Vector3.Lerp(targetpos, startpos, lTime);
+                transform.localPosition = n;
+                lTime += Time.deltaTime;
+                if (Vector3.Distance(transform.localPosition, startpos) < 0.005f)
+                {
+                    state = SUBSTATE.OFFSCREEN;
+                }
                 break;
 
             case SUBSTATE.OFFSCREEN:
+                // destroy
                 break;
         }
 
