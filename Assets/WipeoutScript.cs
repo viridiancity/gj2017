@@ -29,7 +29,8 @@ public class WipeoutScript : MonoBehaviour {
 
     public void startWipeout()
     {
-        isWipeout = true;
+        this.isWipeout = true;
+        ended = false;
     }
 
     public void Wipeout()
@@ -40,16 +41,24 @@ public class WipeoutScript : MonoBehaviour {
         transform.localPosition = current;// Vector3.Lerp(new Vector3(0, 0, 0), endWPos, lTime);
         lTime += Time.deltaTime;
 
-        if (transform.localPosition.y > endWPos.y)
+        if (transform.localPosition.y >= endWPos.y)
         {
             // reset wipeout status
             transform.localPosition = startWPos;
             //charging = false;
-            lTime = 0;
-            isWipeout = false;
-            ended = false;
+            //lTime = 0;
+            this.isWipeout = false;
+            ended = true;
             Debug.Log("Reset Wipeout");
         }
     }
 
+    public bool isEnded() { return ended; }
+
+    public void reset()
+    {
+        this.isWipeout = false;
+        lTime = 0;
+        ended = false;
+    }
 }

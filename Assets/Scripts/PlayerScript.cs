@@ -26,14 +26,6 @@ public class PlayerScript : MonoBehaviour
     {
         if (isWipeout)
         {
-            if ( wipeoutObj.GetComponent<WipeoutScript>().isWipeout == false)
-            {
-                WipeOut();
-            } if ( wipeoutObj.GetComponent<WipeoutScript>().ended)
-            {
-                wipeoutObj.GetComponent<WipeoutScript>().ended = false;
-                isWipeout = false;
-            }
 
         } else if (charging)
         {
@@ -64,6 +56,13 @@ public class PlayerScript : MonoBehaviour
 
         }
 
+        if (gameObject.GetComponent<WipeoutScript>().isEnded())
+        {
+            // wipeout ended, else, in progress
+            gameObject.GetComponent<WipeoutScript>().reset();
+            isWipeout = false;
+        }
+
     }
 
     void OnMouseUp()
@@ -72,9 +71,7 @@ public class PlayerScript : MonoBehaviour
         if (scharge + lTime >= scharge + chargeTime)
         {
             // fire epic
-            //lTime = 0;
-            isWipeout = true;
-            //WipeOut();
+            WipeOut();
 
         }
 
@@ -107,21 +104,10 @@ public class PlayerScript : MonoBehaviour
     void WipeOut()
     { // fire in WaveManager, or spawn wipeout wave
         Debug.Log("Wipeout");
-
-        wipeoutObj.GetComponent<WipeoutScript>().startWipeout();
-
-        /*current = Vector3.Lerp(startWPos, endWPos, lTime);
-        wipeoutObj.transform.localPosition = current;// Vector3.Lerp(new Vector3(0,0,0), endWPos, lTime);
-        lTime += Time.deltaTime;
-        if (wipeoutObj.GetComponent<Transform>().localPosition.y > endWPos.y)
+        if ( !wipeoutObj.GetComponent<WipeoutScript>().isWipeout )
         {
-            // reset wipeout status
-            wipeoutObj.GetComponent<Transform>().localPosition = startWPos;
-            isWipeout = false;
-            charging = false;
-            lTime = 0;
-            Debug.Log("Reset Wipeout");
-        }*/
+            wipeoutObj.GetComponent<WipeoutScript>().startWipeout();
+        }
 
     }
     
