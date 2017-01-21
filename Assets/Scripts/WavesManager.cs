@@ -83,6 +83,7 @@ public class WavesManager : MonoBehaviour
         } else if ( s == "MAX")
         {
             wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = wavePrefab.GetComponent<PointEffector2D>().forceMagnitude * 10;
+            Camera.main.transform.GetComponent<Animator>().Play("ScreenShake");
             Instantiate(wavePrefab, instantiatePosition, transform.rotation);
             wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
         }
