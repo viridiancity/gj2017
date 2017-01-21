@@ -57,7 +57,32 @@ public class EnemyLevelWaveManager : MonoBehaviour
          Debug.Log("Spawning Wave 3");
          StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 3f));
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
-         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 9f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 9f));
+      }
+      else if (enemyWaveNum == 4)
+      {
+         Debug.Log("Spawning Wave 4");
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 3f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 8f));
+      }
+      else if (enemyWaveNum == 5)
+      {
+         Debug.Log("Spawning Wave 5");
+         StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 3f));
+         StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 4f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 5f));
+         StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 6f));
+         StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 7f));
+      }
+      else if (enemyWaveNum == 6)
+      {
+         Debug.Log("Spawning Wave 5");
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 3f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 4f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 5f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 7f));
       }
 
    }

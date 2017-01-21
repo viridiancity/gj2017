@@ -17,98 +17,106 @@ public class WavesManager : MonoBehaviour
 
    GameObject player;
    PlayerScript playerScript;
-   
+
    // Use this for initialization
    void Start()
    {
       player = GameObject.FindGameObjectWithTag("Player");
       playerScript = player.GetComponent<PlayerScript>();
-        pressedthresh = 0.3f;
-        chargemaxtime = 2.5f; //seconds
+      pressedthresh = 0.3f;
+      chargemaxtime = 2.5f; //seconds
    }
 
-    // Update is called once per frame
-    void Update()
+   // Update is called once per frame
+   void Update()
    {
       if (Input.GetButtonDown("Fire1"))
       {
-        if ( pressed) {
-
+         if (pressed)
+         {
             Debug.Log("Fire sustained .. adding deltatime ..");
             //pressedtime = Time.time;
-
-        } else {
-
+         }
+         else
+         {
             Debug.Log("Fire pressed .. ");
-            playerScript.BeginCharging();
+            if (Input.mousePosition.y/Screen.height < 0.72f)
+               playerScript.BeginCharging();
             pressed = true;
             pressedtime = Time.time;
             pthresh = pressedtime + pressedthresh;
             pmax = pressedtime + chargemaxtime;
-        }
-
-      } else if (Input.GetButtonUp("Fire1")) {
-          float ptime = Time.time;
-          Debug.Log("Fire released .. ");
-          if (ptime <= pthresh) { // normal pulse
-                Debug.Log("normal pulse");
-
-                instantiatewave("normal");
-
-          } else { // charged pulse
-              // note: add a bit of screenshake for max charge
-              Debug.Log("Charged pulse .. ");
-            
-              Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-              instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
-              float mag = ptime - pthresh;
-              GameObject w = waveNormalPrefab;
-              if ( mag > 0) {
-                // held time maxed out charge
-                instantiatewave( "MAX" );//
-
-              } else {
-                // negative time - mid-charge pulse
-                instantiatewave("partial");//
-
-              }
-          
-          }
-          
-          pressedtime = 0;
-          pressed = false;
-            
+         }
       }
+      else if (Input.GetButtonUp("Fire1"))
+      {
+         float ptime = Time.time;
+         Debug.Log("Fire released .. ");
+         if (ptime <= pthresh)
+         { // normal pulse
+            Debug.Log("normal pulse");
 
-    }
+            instantiatewave("normal");
 
-    private void instantiatewave(string s)
-    {
-        Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+         }
+         else
+         { // charged pulse
+           // note: add a bit of screenshake for max charge
+            Debug.Log("Charged pulse .. ");
 
-      playerScript.ChangeState(Input.mousePosition.x / Screen.width);
+            Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
+            float mag = ptime - pthresh;
+            GameObject w = waveNormalPrefab;
+            if (mag > 0)
+            {
+               // held time maxed out charge
+               instantiatewave("MAX");//
+            }
+            else
+            {
+               // negative time - mid-charge pulse
+               instantiatewave("partial");//
+            }
+         }
 
-        instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
-        if (s == "normal")
-        {
+         pressedtime = 0;
+         pressed = false;
+      }
+   }
+
+   private void instantiatewave(string s)
+   {
+      if (Input.mousePosition.y / Screen.height < 0.72f)
+      {
+         Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+         playerScript.ChangeState(Input.mousePosition.x / Screen.width);
+
+         instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
+         if (s == "normal")
+         {
             Instantiate(waveNormalPrefab, instantiatePosition, transform.rotation);
-        } else if ( s == "MAX")
-        {
+         }
+         else if (s == "MAX")
+         {
             Camera.main.transform.GetComponent<Animator>().Play("ScreenShake");
             Instantiate(waveStrongPrefab, instantiatePosition, transform.rotation);
             waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
-        }
-        else if ( s == "partial")
-        {
+         }
+         else if (s == "partial")
+         {
             waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude * ((mag % 3) + 1);
             Instantiate(waveNormalPrefab, instantiatePosition, transform.rotation);
             waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
-        }
-        else
-        {
+         }
+         else
+         {
             Debug.Log("wtf lol");
-        }
-    }
+         }
+      }
+      
+   }
 
    public void DestroyWave()
    {

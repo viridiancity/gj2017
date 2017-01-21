@@ -100,8 +100,6 @@ public class PlayerScript : MonoBehaviour
 
    public void ChangeState(float clickThirds)
    {
-      Debug.Log("<color=red>" + clickThirds + "</color>");
-
       if (clickThirds < 0.33f)
       {
          animator.Play("Left");
