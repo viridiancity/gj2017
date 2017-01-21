@@ -8,8 +8,11 @@ public class TorpedoScript : MonoBehaviour {
 
     private STATE state;
     public float ythresh; // height for torpedo to ascend to
-	// Use this for initialization
-	void Start () {
+    public Vector3 centerofmass;
+    public Rigidbody2D rb2d;
+    // Use this for initialization
+    void Start () {
+
         state = STATE.SPAWN;
         fire();
         state = STATE.ASCENDING;
@@ -27,6 +30,8 @@ public class TorpedoScript : MonoBehaviour {
                 if ( transform.localPosition.y > ythresh)
                 {
                     state = STATE.PEAK;
+                    centerofmass = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
+                    rb2d.centerOfMass = centerofmass;
                 }
 
                 break;
@@ -51,4 +56,8 @@ public class TorpedoScript : MonoBehaviour {
     }
 
 
+}
+
+internal class RigidBody2D
+{
 }

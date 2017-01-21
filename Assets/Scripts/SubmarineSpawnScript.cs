@@ -11,31 +11,100 @@ public class SubmarineSpawnScript : MonoBehaviour {
     public GameObject SubmarineTarget00;
     public GameObject SubmarineTarget01;
     public GameObject SubmarineTarget02;
+
+    public float minSpawnTime;
+    public float maxSpawnTime;
+
+    private float nextminSpawn;
+    private float nextmaxSpawn;
     //public GameObject shipfact;
+
+    private bool active;
+
+    private float tLastSpawn;
 
     // Use this for initialization
     void Start () {
+        active = false;
+        tLastSpawn = Time.time;
+        nextminSpawn = tLastSpawn + minSpawnTime;
+        nextmaxSpawn = tLastSpawn + maxSpawnTime;
+        // debug spawn
+        active = true;
         Spawn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        if ( active )
+        {
+            
+            if ( tLastSpawn > nextminSpawn && tLastSpawn < nextmaxSpawn)
+            {
+                // random chance of spawning
+                if ( tLastSpawn % Random.Range(1, 550313 ) % 5 == 3)
+                {
+                    SpawnAndResetSpawnTimers();
+                }
+            } else if ( tLastSpawn > nextmaxSpawn)
+            {
+                // spawn and reset tLastSpawn
+                SpawnAndResetSpawnTimers();
+
+            }
+            tLastSpawn += Time.deltaTime;
+        }
+        
+    }
+
+    public void activate()
+    {
+        active = true;
+        SpawnAndResetSpawnTimers();
+    }
+
+    void SpawnAndResetSpawnTimers()
+    {
+        // can add remaining time to min time
+        tLastSpawn = Time.time;
+
+        nextminSpawn = tLastSpawn + minSpawnTime;
+        nextmaxSpawn = tLastSpawn + maxSpawnTime;
+
+        Spawn();
+    }
 
     void Spawn() // does not necessarily need to differentiate
     {
         GameObject o = Instantiate(sub);
+
+        GameObject target;
+        switch ( ( (int) Random.Range(15,30000) ) % 2 ){
+            case 0:
+                target = SubmarineTarget00;
+                break;
+            case 1:
+                target = SubmarineTarget01;
+                break;
+            default:
+                target = SubmarineTarget02;
+                break;
+        }
+        
         if ( side == "Right")
         {
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "LEFT");
+            Vector3 t = transform.localPosition;
+            t.y = target.transform.position.y;
+            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "LEFT");
             
         } else if ( side == "Left")
         {
-            
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "RIGHT");
+            Vector3 t = transform.localPosition;
+            t.y = target.transform.position.y;
+            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "RIGHT");
         }
-        o.transform.localPosition = transform.position;
+
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
         //GameObject s = Instantiate(sub, transform.localPositionm, Quaternion.identity);
