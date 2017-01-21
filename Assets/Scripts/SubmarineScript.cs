@@ -107,4 +107,9 @@ public class SubmarineScript : MonoBehaviour {
         }
     }
 
+    public bool isOffScreen()
+    {
+        return state == SUBSTATE.OFFSCREEN;
+    }
+
 }

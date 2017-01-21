@@ -13,7 +13,8 @@ public class SubmarineSpawnScript : MonoBehaviour {
     public GameObject SubmarineTarget02;
 
     private List<GameObject> subList;
-    private int maxSubs;
+    public int maxActiveSubs;
+    private int activeSubs;
     private float tLastSpawn;
 
     public float minSpawnTime;
@@ -34,6 +35,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
         nextminSpawn = tLastSpawn + minSpawnTime;
         nextmaxSpawn = tLastSpawn + maxSpawnTime;
         // debug spawn
+        activeSubs = 0;
         active = true;
         Spawn();
 	}
@@ -42,21 +44,21 @@ public class SubmarineSpawnScript : MonoBehaviour {
 	void Update () {
 
         // check if any subs are inactive
-        //foreach ( GameObject s in subList ){
-        //    if ( )
-        //    {
-        //        s
-        //    }
-        //}
+        foreach ( GameObject s in subList ){
+            if ( s.GetComponent<SubmarineScript>().isOffScreen() )
+            {
+                subList.Remove(s);
+                activeSubs = Mathf.Max(activeSubs--, 0);
+            }
+        }
 
         if (active)
         {
-            float activesubs = 1;
-            float maxactivesubs = 3;
-            if (activesubs > maxactivesubs)
-            {
 
-            } else {
+            //if (activeSubs > maxActiveSubs)
+            //{
+
+            //} else {
 
                 if (tLastSpawn > nextminSpawn && tLastSpawn < nextmaxSpawn)
                 {
@@ -72,7 +74,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
                 }
                 tLastSpawn += Time.deltaTime;
-            }
+            //}
         }
         
     }
@@ -85,18 +87,22 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
     void SpawnAndResetSpawnTimers()
     {
+
         // can add remaining time to min time
         tLastSpawn = Time.time;
-
+        
         nextminSpawn = tLastSpawn + minSpawnTime;
         nextmaxSpawn = tLastSpawn + maxSpawnTime;
-
-        Spawn();
+        if (sub.GetComponent<SubmarineScript>().isOffScreen()) // activeSubs < maxActiveSubs)
+        {
+            //activeSubs++;
+            Spawn();
+        }
     }
 
     void Spawn() // does not necessarily need to differentiate
     {
-        GameObject o = Instantiate(sub);
+        sub = Instantiate(sub);
 
         GameObject target;
         switch ( ( (int) Random.Range(15,30000) ) % 2 ){
@@ -115,15 +121,15 @@ public class SubmarineSpawnScript : MonoBehaviour {
         {
             Vector3 t = transform.localPosition;
             t.y = target.transform.position.y;
-            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "LEFT");
+            sub.GetComponent<SubmarineScript>().init(t, target.transform.position, "LEFT");
             
         } else if ( side == "Left")
         {
             Vector3 t = transform.localPosition;
             t.y = target.transform.position.y;
-            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "RIGHT");
+            sub.GetComponent<SubmarineScript>().init(t, target.transform.position, "RIGHT");
         }
-
+        //subList.Add(o);
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
         //GameObject s = Instantiate(sub, transform.localPositionm, Quaternion.identity);

@@ -62,7 +62,7 @@ public class TorpedoScript : MonoBehaviour {
                 cc2d.enabled = true;
                 break;
             case STATE.DESCENDING:
-
+                // steer and avoid barrels
                 break;
 
         }

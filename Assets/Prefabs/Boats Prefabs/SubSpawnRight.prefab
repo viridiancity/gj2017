@@ -144,3 +144,6 @@ MonoBehaviour:
   SubmarineTarget00: {fileID: 1776224394892810}
   SubmarineTarget01: {fileID: 1395014069088096}
   SubmarineTarget02: {fileID: 1207442905644200}
+  maxActiveSubs: 1
+  minSpawnTime: 0.5
+  maxSpawnTime: 2
