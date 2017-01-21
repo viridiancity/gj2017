@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114005401578548278}
   - component: {fileID: 114411007761707020}
   - component: {fileID: 60579013965289888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mine
-  m_TagString: Waste Barrell
+  m_TagString: Mines
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
