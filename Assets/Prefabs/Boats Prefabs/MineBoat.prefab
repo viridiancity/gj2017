@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085989652085778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.645, y: 8.06, z: 0}
+  m_LocalPosition: {x: -6.645, y: 7.646, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042cb548ee70ecc44a82eacb75b392e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1717461710220984, guid: 180e49e836f20de45b60c467f78737f1,
+  projectilePrefab: {fileID: 1717461710220984, guid: 3305fbbe499097a418a0c40503c790f3,
     type: 2}
   minAttackDelay: 2
   maxAttackDelay: 4
