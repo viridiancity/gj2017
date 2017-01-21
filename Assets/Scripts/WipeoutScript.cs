@@ -12,6 +12,8 @@ public class WipeoutScript : MonoBehaviour {
     public bool started   = false;
     public bool ended     = false;
 
+   public float upForce;
+
     // Use this for initialization
     void Start () {
 		
@@ -34,7 +36,7 @@ public class WipeoutScript : MonoBehaviour {
 
     public void Wipeout()
     {
-        Debug.Log("Wipeout!!_!!!!!?!");
+        //Debug.Log("Wipeout!!_!!!!!?!");
         
         current = Vector3.Lerp(startWPos, endWPos, lTime);
         transform.localPosition = current;
@@ -57,4 +59,29 @@ public class WipeoutScript : MonoBehaviour {
         lTime = 0;
         ended = false;
     }
+
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
+      string tag = collision.tag;
+
+      if (isWipeout)
+      {
+         if (tag == "Garbage Bag" ||
+             tag == "Waste Barrell" ||
+             tag == "Mines" ||
+             tag == "Torpedo" ||
+             tag == "CementLegGuy")
+         {
+            StartCoroutine(DelayedAddForce(0.1f, collision));
+         }
+      }
+   }
+
+   IEnumerator DelayedAddForce(float delay, Collider2D collision)
+   {
+      yield return new WaitForSeconds(delay);
+      Rigidbody2D rb2d = collision.transform.GetComponent<Rigidbody2D>();
+      rb2d.AddForce(new Vector2(0f, upForce));
+   }
+
 }
