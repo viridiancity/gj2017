@@ -96,15 +96,21 @@ public class SubmarineScript : MonoBehaviour {
         state = SUBSTATE.TOTARGET; //substate.spawned, then orient ?
         if ( dir == "LEFT" )
         {
-            // flip sprite so submarine travels in the right direction
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            // flip sprite so sgameObject.GetComponent<SpriteRenderer>().flipX = true;ubmarine travels in the right direction
+            //gameObject.GetComponent<SpriteRenderer>().flipX = true;            
             // multiply rotation as appropriate to flip sprite direction
 
         } else
         {
             // right
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
         }
+    }
+
+    public bool isOffScreen()
+    {
+        return state == SUBSTATE.OFFSCREEN;
     }
 
 }
