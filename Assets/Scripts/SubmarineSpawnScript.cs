@@ -26,16 +26,33 @@ public class SubmarineSpawnScript : MonoBehaviour {
     void Spawn() // does not necessarily need to differentiate
     {
         GameObject o = Instantiate(sub);
+
+        GameObject target;
+        switch ( ( (int) Random.Range(15,30000) ) % 2 ){
+            case 0:
+                target = SubmarineTarget00;
+                break;
+            case 1:
+                target = SubmarineTarget01;
+                break;
+            default:
+                target = SubmarineTarget02;
+                break;
+        }
+        
         if ( side == "Right")
         {
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "LEFT");
+            Vector3 t = transform.localPosition;
+            t.y = target.transform.position.y;
+            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "LEFT");
             
         } else if ( side == "Left")
         {
-            
-            o.GetComponent<SubmarineScript>().init(transform.localPosition, SubmarineTarget00.transform.position, "RIGHT");
+            Vector3 t = transform.localPosition;
+            t.y = target.transform.position.y;
+            o.GetComponent<SubmarineScript>().init(t, target.transform.position, "RIGHT");
         }
-        o.transform.localPosition = transform.position;
+
         //GameObject s = shipfact.GetComponent<ShipFactory>().getSub(SubmarineTarget);
 
         //GameObject s = Instantiate(sub, transform.localPositionm, Quaternion.identity);
