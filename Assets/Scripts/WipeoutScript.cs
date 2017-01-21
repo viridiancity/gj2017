@@ -53,7 +53,7 @@ public class WipeoutScript : MonoBehaviour {
 
     public void reset()
     {
-        this.isWipeout = false;
+        isWipeout = false;
         lTime = 0;
         ended = false;
     }
