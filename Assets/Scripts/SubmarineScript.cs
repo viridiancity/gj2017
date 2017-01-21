@@ -6,7 +6,7 @@ public class SubmarineScript : MonoBehaviour {
 
     public Vector3 startpos;
     public Vector3 targetpos;
-    private enum SUBSTATE { SPAWNED, TOTARGET, REACHEDTARGET, FROMTARGET, OFFSCREEN};
+    private enum SUBSTATE { SPAWNED, TOTARGET, REACHEDTARGET, FIRED, LAUNCHED, FROMTARGET, OFFSCREEN};
     private      SUBSTATE state;
     public GameObject torpedo;
     private Vector3 n;
@@ -46,11 +46,23 @@ public class SubmarineScript : MonoBehaviour {
                 {
                     fire();
                     lTime = 0;
-                    state = SUBSTATE.FROMTARGET;
+                    state = SUBSTATE.LAUNCHED;
                 }
                 
                 break;
+            case SUBSTATE.LAUNCHED:
+                // wait a little until disappearing
+                if (lTime < waitTime)
+                {
+                    lTime += Time.deltaTime;
+                }
+                else
+                {
+                    lTime = 0;
+                    state = SUBSTATE.FROMTARGET;
+                }
 
+                break;
             case SUBSTATE.FROMTARGET:
                 n = Vector3.Lerp(targetpos, startpos, lTime);
                 transform.localPosition = n;
@@ -84,6 +96,8 @@ public class SubmarineScript : MonoBehaviour {
         state = SUBSTATE.TOTARGET; //substate.spawned, then orient ?
         if ( dir == "LEFT" )
         {
+            // flip sprite so submarine travels in the right direction
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
             // multiply rotation as appropriate to flip sprite direction
 
         } else
