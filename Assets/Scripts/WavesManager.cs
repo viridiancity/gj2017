@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WavesManager : MonoBehaviour
 {
-   public GameObject wavePrefab;
+   public GameObject waveNormalPrefab;
+   public GameObject waveStrongPrefab;
     float mag = 150f;
    // Use this for initialization
    void Start()
@@ -53,7 +54,7 @@ public class WavesManager : MonoBehaviour
               Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
               instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
               float mag = ptime - pthresh;
-              GameObject w = wavePrefab;
+              GameObject w = waveNormalPrefab;
               if ( mag > 0) {
                 // held time maxed out charge
                 instantiatewave( "MAX" );//
@@ -79,19 +80,18 @@ public class WavesManager : MonoBehaviour
         instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
         if (s == "normal")
         {
-            Instantiate(wavePrefab, instantiatePosition, transform.rotation);
+            Instantiate(waveNormalPrefab, instantiatePosition, transform.rotation);
         } else if ( s == "MAX")
         {
-            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = wavePrefab.GetComponent<PointEffector2D>().forceMagnitude * 10;
             Camera.main.transform.GetComponent<Animator>().Play("ScreenShake");
-            Instantiate(wavePrefab, instantiatePosition, transform.rotation);
-            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
+            Instantiate(waveStrongPrefab, instantiatePosition, transform.rotation);
+            waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
         }
         else if ( s == "partial")
         {
-            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = wavePrefab.GetComponent<PointEffector2D>().forceMagnitude * ((mag % 3) + 1);
-            Instantiate(wavePrefab, instantiatePosition, transform.rotation);
-            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
+            waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude * ((mag % 3) + 1);
+            Instantiate(waveNormalPrefab, instantiatePosition, transform.rotation);
+            waveNormalPrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
         }
         else
         {

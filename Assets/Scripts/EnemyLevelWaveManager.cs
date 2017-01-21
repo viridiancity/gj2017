@@ -59,6 +59,7 @@ public class EnemyLevelWaveManager : MonoBehaviour
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 9f));
       }
+
    }
 
    IEnumerator DelayedSpawnBoat(GameObject prefab, float delay)

@@ -48,3 +48,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 722389481
+    locked: 0
+  - name: Wave
+    uniqueID: 3198212155
+    locked: 0
+  - name: Boats
+    uniqueID: 84552767
+    locked: 0
+  - name: Projectiles
+    uniqueID: 2559372861
+    locked: 0
+  - name: Gizmo
+    uniqueID: 3340706885
+    locked: 0
