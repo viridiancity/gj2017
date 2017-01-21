@@ -4,16 +4,9 @@ using System.Collections;
 public class BoatMovement : MonoBehaviour
 {
    public Transform endPosition;
+   public Transform startPosition;
    public float speed;
    public int movingDirection = 1;
-
-   private Vector3 startPosition;
-
-   // Use this for initialization
-   void Start()
-   {
-      startPosition = transform.position;
-   }
 
    // Update is called once per frame
    void Update()
@@ -31,7 +24,7 @@ public class BoatMovement : MonoBehaviour
       }
       else if (movingDirection == 0)
       {
-         if (transform.position.x <= startPosition.x)
+         if (transform.position.x <= startPosition.position.x)
          {
             transform.Rotate(Vector3.up * -180f);
             movingDirection = 1;
