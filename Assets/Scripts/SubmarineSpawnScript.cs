@@ -12,6 +12,10 @@ public class SubmarineSpawnScript : MonoBehaviour {
     public GameObject SubmarineTarget01;
     public GameObject SubmarineTarget02;
 
+    private List<GameObject> subList;
+    private int maxSubs;
+    private float tLastSpawn;
+
     public float minSpawnTime;
     public float maxSpawnTime;
 
@@ -21,7 +25,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
     private bool active;
 
-    private float tLastSpawn;
+
 
     // Use this for initialization
     void Start () {
@@ -37,23 +41,38 @@ public class SubmarineSpawnScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if ( active )
-        {
-            
-            if ( tLastSpawn > nextminSpawn && tLastSpawn < nextmaxSpawn)
-            {
-                // random chance of spawning
-                if ( tLastSpawn % Random.Range(1, 550313 ) % 5 == 3)
-                {
-                    SpawnAndResetSpawnTimers();
-                }
-            } else if ( tLastSpawn > nextmaxSpawn)
-            {
-                // spawn and reset tLastSpawn
-                SpawnAndResetSpawnTimers();
+        // check if any subs are inactive
+        //foreach ( GameObject s in subList ){
+        //    if ( )
+        //    {
+        //        s
+        //    }
+        //}
 
+        if (active)
+        {
+            float activesubs = 1;
+            float maxactivesubs = 3;
+            if (activesubs > maxactivesubs)
+            {
+
+            } else {
+
+                if (tLastSpawn > nextminSpawn && tLastSpawn < nextmaxSpawn)
+                {
+                    // random chance of spawning
+                    if (tLastSpawn % Random.Range(1, 550313) % 5 == 3)
+                    {
+                        SpawnAndResetSpawnTimers();
+                    }
+                } else if (tLastSpawn > nextmaxSpawn)
+                {
+                    // spawn and reset tLastSpawn
+                    SpawnAndResetSpawnTimers();
+
+                }
+                tLastSpawn += Time.deltaTime;
             }
-            tLastSpawn += Time.deltaTime;
         }
         
     }
