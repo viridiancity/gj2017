@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layer: 0
-  side: 
+  side: Left
   sub: {fileID: 1104903410112250, guid: bf304183acc931f40be1d6816c1d7cb0, type: 2}
   SubmarineTarget: {fileID: 901987131}
 --- !u!1 &768560291
