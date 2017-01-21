@@ -14,6 +14,9 @@ public class SubmarineSpawnScript : MonoBehaviour {
 
     public float minSpawnTime;
     public float maxSpawnTime;
+
+    private float nextminSpawn;
+    private float nextmaxSpawn;
     //public GameObject shipfact;
 
     private bool active;
@@ -23,27 +26,53 @@ public class SubmarineSpawnScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         active = false;
-        tLastSpawn = 0;
-
+        tLastSpawn = Time.time;
+        nextminSpawn = tLastSpawn + minSpawnTime;
+        nextmaxSpawn = tLastSpawn + maxSpawnTime;
         // debug spawn
+        active = true;
         Spawn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if ( active)
+        if ( active )
         {
-
-            if ( tLastSpawn > minSpawnTime)
+            
+            if ( tLastSpawn > nextminSpawn && tLastSpawn < nextmaxSpawn)
             {
                 // random chance of spawning
+                if ( tLastSpawn % Random.Range(1, 550313 ) % 5 == 3)
+                {
+                    SpawnAndResetSpawnTimers();
+                }
+            } else if ( tLastSpawn > nextmaxSpawn)
+            {
+                // spawn and reset tLastSpawn
+                SpawnAndResetSpawnTimers();
 
             }
-
+            tLastSpawn += Time.deltaTime;
         }
+        
+    }
 
+    public void activate()
+    {
+        active = true;
+        SpawnAndResetSpawnTimers();
+    }
 
+    void SpawnAndResetSpawnTimers()
+    {
+        // can add remaining time to min time
+        tLastSpawn = Time.time;
+
+        nextminSpawn = tLastSpawn + minSpawnTime;
+        nextmaxSpawn = tLastSpawn + maxSpawnTime;
+
+        Spawn();
     }
 
     void Spawn() // does not necessarily need to differentiate
