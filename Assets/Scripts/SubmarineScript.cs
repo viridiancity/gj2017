@@ -11,6 +11,7 @@ public class SubmarineScript : MonoBehaviour {
     public GameObject torpedo;
     private Vector3 n;
     private float lTime;
+    public float waitTime;
     // Use this for initialization
     void Start () { }
 	
@@ -30,15 +31,24 @@ public class SubmarineScript : MonoBehaviour {
                 transform.localPosition = n;
                 if (Vector3.Distance ( transform.localPosition, targetpos ) < 0.005f )
                 {
+                    lTime = 0;
                     state = SUBSTATE.REACHEDTARGET;
                 }
+
                 break;
 
             case SUBSTATE.REACHEDTARGET:
                 // fire the sail off
-                lTime = 0;
-                fire();
-                state = SUBSTATE.FROMTARGET;
+                if ( lTime < waitTime)
+                {
+                    lTime += Time.deltaTime;
+                } else
+                {
+                    fire();
+                    lTime = 0;
+                    state = SUBSTATE.FROMTARGET;
+                }
+                
                 break;
 
             case SUBSTATE.FROMTARGET:
@@ -61,6 +71,8 @@ public class SubmarineScript : MonoBehaviour {
     private void fire()
     {
         Debug.Log("Fire !");
+        Vector3 sp = transform.localPosition;
+        //Instantiate(torpedo, transform.localPosition);
     }
 
     public void init(Vector3 startpos, Vector3 target, string dir)
