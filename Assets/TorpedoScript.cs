@@ -48,7 +48,7 @@ public class TorpedoScript : MonoBehaviour {
                 //if ( transform.position.y > ythresh)
                 //{
                     //state = STATE.PEAK;
-                    transform.position = Vector3.Lerp( start, target, lTime );
+                    transform.position = Vector3.Slerp( start, target, lTime/3 );
                     lTime += Time.deltaTime;
                     //centerofmass = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
                     //rb2d.centerOfMass = centerofmass;
@@ -60,9 +60,15 @@ public class TorpedoScript : MonoBehaviour {
                 break;
             case STATE.PEAK:
                 cc2d.enabled = true;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30, 800));
+                state = STATE.DESCENDING;
                 break;
             case STATE.DESCENDING:
                 // steer and avoid barrels
+
+
+
+
                 break;
 
         }
