@@ -26,7 +26,7 @@ public class SubmarineScript : MonoBehaviour {
                 break;
 
             case SUBSTATE.TOTARGET:
-                n = Vector3.Lerp(startpos, targetpos, lTime);
+                n = Vector3.Lerp(startpos, targetpos, lTime/3);
                 lTime += Time.deltaTime;
                 transform.localPosition = n;
                 if (Vector3.Distance ( transform.localPosition, targetpos ) < 0.005f )
