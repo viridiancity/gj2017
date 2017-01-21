@@ -27,6 +27,13 @@ public class PlayerScript : MonoBehaviour
         if (isWipeout)
         {
 
+            if ( gameObject.GetComponent<WipeoutScript>().ended == true)
+            {
+                // wipeout ended, else, in progress
+                gameObject.GetComponent<WipeoutScript>().reset();
+                isWipeout = false;
+            }
+
         } else if (charging)
         {
 
@@ -40,27 +47,6 @@ public class PlayerScript : MonoBehaviour
             lTime = 0;
             charging = false;
 
-            transform.localScale = new Vector3(1, 1, 1);
-            startScale = new Vector3(1, 1, 1);
-            /*if ( current.x > start.x && current.y > start.y )
-            {
-                start = new Vector3(1, 1, 1);
-                transform.localScale = Vector3.Lerp(current, start, lTime);
-                lTime += Time.deltaTime;
-            } else
-            {
-                current = Vector3.zero;
-                lTime = 0;
-                start = new Vector3(1, 1, 1);
-            }*/
-
-        }
-
-        if (gameObject.GetComponent<WipeoutScript>().isEnded())
-        {
-            // wipeout ended, else, in progress
-            gameObject.GetComponent<WipeoutScript>().reset();
-            isWipeout = false;
         }
 
     }
@@ -77,9 +63,6 @@ public class PlayerScript : MonoBehaviour
 
         lTime = 0;
         charging = false;
-
-        transform.localScale = new Vector3(1, 1, 1);
-        startScale = new Vector3(1, 1, 1);
 
     }
 

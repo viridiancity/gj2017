@@ -20,7 +20,7 @@ public class WipeoutScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if ( isWipeout )
+        if ( isWipeout && !ended)
         {
             Wipeout();
         }
@@ -30,7 +30,6 @@ public class WipeoutScript : MonoBehaviour {
     public void startWipeout()
     {
         this.isWipeout = true;
-        ended = false;
     }
 
     public void Wipeout()
@@ -38,16 +37,13 @@ public class WipeoutScript : MonoBehaviour {
         Debug.Log("Wipeout!!_!!!!!?!");
         
         current = Vector3.Lerp(startWPos, endWPos, lTime);
-        transform.localPosition = current;// Vector3.Lerp(new Vector3(0, 0, 0), endWPos, lTime);
+        transform.localPosition = current;
         lTime += Time.deltaTime;
 
         if (transform.localPosition.y >= endWPos.y)
         {
             // reset wipeout status
             transform.localPosition = startWPos;
-            //charging = false;
-            //lTime = 0;
-            this.isWipeout = false;
             ended = true;
             Debug.Log("Reset Wipeout");
         }
