@@ -39,7 +39,7 @@ public class WavesManager : MonoBehaviour
          }
          else
          {
-            Debug.Log("Fire pressed .. ");
+            //Debug.Log("Fire pressed .. ");
             if (Input.mousePosition.y/Screen.height < 0.72f)
                playerScript.BeginCharging();
             pressed = true;
@@ -51,10 +51,10 @@ public class WavesManager : MonoBehaviour
       else if (Input.GetButtonUp("Fire1"))
       {
          float ptime = Time.time;
-         Debug.Log("Fire released .. ");
+         //Debug.Log("Fire released .. ");
          if (ptime <= pthresh)
          { // normal pulse
-            Debug.Log("normal pulse");
+            //Debug.Log("normal pulse");
 
             instantiatewave("normal");
 
@@ -62,7 +62,7 @@ public class WavesManager : MonoBehaviour
          else
          { // charged pulse
            // note: add a bit of screenshake for max charge
-            Debug.Log("Charged pulse .. ");
+            //Debug.Log("Charged pulse .. ");
 
             Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);

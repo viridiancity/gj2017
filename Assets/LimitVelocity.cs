@@ -16,6 +16,6 @@ public class LimitVelocity : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      Debug.Log(rb2d.velocity);
+      //Debug.Log(rb2d.velocity);
    }
 }
