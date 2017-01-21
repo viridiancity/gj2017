@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyWave : MonoBehaviour
+public class AnimationEventDestroy : MonoBehaviour
 {
 
-   public void DestroyWaveAfterAnimation()
+   public void DestroyAfterAnimation()
    {
       Destroy(gameObject);
    }

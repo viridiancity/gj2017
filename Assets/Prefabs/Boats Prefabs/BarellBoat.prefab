@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114486168660499756}
   - component: {fileID: 60706295980026544}
   - component: {fileID: 114975758967826600}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BarellBoat
-  m_TagString: Untagged
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

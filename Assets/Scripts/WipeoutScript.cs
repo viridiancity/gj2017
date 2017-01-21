@@ -34,8 +34,6 @@ public class WipeoutScript : MonoBehaviour {
 
     public void Wipeout()
     {
-        Debug.Log("Wipeout!!_!!!!!?!");
-        
         current = Vector3.Lerp(startWPos, endWPos, lTime);
         transform.localPosition = current;
         lTime += Time.deltaTime;
@@ -53,6 +51,7 @@ public class WipeoutScript : MonoBehaviour {
 
     public void reset()
     {
+      Debug.Log("Reset function here");
         this.isWipeout = false;
         lTime = 0;
         ended = false;

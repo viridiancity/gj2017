@@ -16,8 +16,17 @@ public class DamageTrigger : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D collision)
    {
-      player.health -= 10;
-      Destroy(collision.gameObject);
+      string tag = collision.transform.tag;
+
+      if (tag == "Garbage Bag" ||
+          tag == "Waste Barrell" ||
+          tag == "Mines" ||
+          tag == "Torpedo" ||
+          tag == "CementLegGuy")
+      {
+         player.health -= 10;
+         Destroy(collision.gameObject);
+      }
    }
 
 }

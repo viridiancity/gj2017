@@ -9,6 +9,8 @@ TagManager:
   - Mines
   - Torpedo
   - CementLegGuy
+  - Boat
+  - Wipeout
   layers:
   - Default
   - TransparentFX
@@ -18,10 +20,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BottomWall
+  - Wipeout
+  - Boat
+  - Projectile
   - 
   - 
   - 

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 60220932758264460}
   - component: {fileID: 114809985061101260}
   m_Layer: 10
-  m_Name: GarbageBoat
+  m_Name: MineBoat
   m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085989652085778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.53, y: 8.139, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.645, y: 8.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,23 +55,30 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3}
   m_Points:
     m_Paths:
-    - - {x: 0.31, y: 0.475}
+    - - {x: 0.6232734, y: 0.05730152}
+      - {x: 0.45112848, y: 0.29733467}
+      - {x: 0.30869627, y: 0.46164608}
       - {x: 0.48999998, y: 0.635}
       - {x: 0.28, y: 0.85499996}
       - {x: 0.24, y: 0.84499997}
+      - {x: 0.23298168, y: 0.18374968}
       - {x: -0.21, y: 0.055}
       - {x: -0.16054344, y: 0.52039623}
       - {x: -0.45242977, y: 0.44661808}
       - {x: -0.31, y: 0.285}
       - {x: -0.29, y: 0.055}
-      - {x: -1.0705371, y: 0.029866219}
+      - {x: -0.55610466, y: 0.06705284}
+      - {x: -0.76310396, y: 0.22307682}
+      - {x: -0.90498257, y: 0.047194958}
+      - {x: -1.1951728, y: 0.019760609}
       - {x: -1.1362276, y: -0.27878523}
-      - {x: -1.1986885, y: -0.79851675}
-      - {x: -0.0659461, y: -0.80257034}
-      - {x: 0.5535164, y: -0.808517}
+      - {x: -1.1852145, y: -0.36397552}
+      - {x: -0.23100424, y: -0.39497757}
+      - {x: 0.6512041, y: -0.39418697}
+      - {x: 1.0197148, y: -0.22173691}
       - {x: 1.1899999, y: 0.035}
 --- !u!114 &114039422263959052
 MonoBehaviour:
@@ -99,10 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042cb548ee70ecc44a82eacb75b392e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1310182409976344, guid: b1bae06fbbd2b3645997d0330a8be7f8,
+  projectilePrefab: {fileID: 1717461710220984, guid: 180e49e836f20de45b60c467f78737f1,
     type: 2}
   minAttackDelay: 1
-  maxAttackDelay: 10
+  maxAttackDelay: 1
 --- !u!114 &114809985061101260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d700b62a3e77a2f4789fe05bb3839b94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638df8cabbeb6b24fb32a4cdee76ab7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

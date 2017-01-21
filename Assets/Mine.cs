@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatScript : MonoBehaviour
+public class Mine : MonoBehaviour
 {
+   public GameObject explosionPrefab;
 
    private void OnCollisionEnter2D(Collision2D collision)
    {
@@ -15,8 +16,7 @@ public class BoatScript : MonoBehaviour
           tag == "Torpedo" ||
           tag == "CementLegGuy")
       {
-         EnemyLevelWaveManager.instance.numEnemies = EnemyLevelWaveManager.instance.numEnemies - 1;
-         Destroy(gameObject);
+         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
       }
    }
 
