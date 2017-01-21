@@ -10,7 +10,7 @@ public class WavesManager : MonoBehaviour
    void Start()
    {
         pressedthresh = 0.3f;
-        chargemaxtime = 1.5f;
+        chargemaxtime = 2.5f; //seconds
    }
     private bool pressed;
     private float pressedtime;
@@ -82,7 +82,7 @@ public class WavesManager : MonoBehaviour
             Instantiate(wavePrefab, instantiatePosition, transform.rotation);
         } else if ( s == "MAX")
         {
-            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = wavePrefab.GetComponent<PointEffector2D>().forceMagnitude * 6;
+            wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = wavePrefab.GetComponent<PointEffector2D>().forceMagnitude * 10;
             Instantiate(wavePrefab, instantiatePosition, transform.rotation);
             wavePrefab.GetComponent<PointEffector2D>().forceMagnitude = 150;
         }
