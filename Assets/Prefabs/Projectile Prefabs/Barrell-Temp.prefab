@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212000011696001496}
   - component: {fileID: 50000011622389044}
   - component: {fileID: 61000011533871336}
+  - component: {fileID: 114654577803446180}
   m_Layer: 0
   m_Name: Barrell-Temp
   m_TagString: Waste Barrell
@@ -76,6 +77,17 @@ BoxCollider2D:
   m_Offset: {x: 0.01, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.69, y: 0.27}
+--- !u!114 &114654577803446180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011750652192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319af05cc407336428d657478f339135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000011696001496
 SpriteRenderer:
   m_ObjectHideFlags: 1

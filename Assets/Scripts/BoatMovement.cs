@@ -8,6 +8,12 @@ public class BoatMovement : MonoBehaviour
    public float speed;
    public int movingDirection = 1;
 
+   private void Start()
+   {
+      startPosition = GameObject.Find("Boat Left Edge").GetComponent<Transform>();
+      endPosition = GameObject.Find("Boat Right Edge").GetComponent<Transform>();
+   }
+
    // Update is called once per frame
    void Update()
    {
