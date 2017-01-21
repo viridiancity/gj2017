@@ -33,7 +33,6 @@ public class EnemyLevelWaveManager : MonoBehaviour
    {
       if (numEnemies <= 0)
       {
-         Debug.Log("numEnemies is now 0");
          enemyWaveNum++;
          SpawnWave();
       }
