@@ -5,15 +5,20 @@ public class PlayerScript : MonoBehaviour
 {
     public int health;
 
-    float scale = 1.25f;
-    Vector3 start = new Vector3(1, 1, 1);
-    Vector3 end = new Vector3(1.25f, 1.25f, 1.25f);
-    Vector3 current = new Vector3(0, 0, 0);
+    
+    public Vector3 endScale = new Vector3(1.25f, 1.25f, 1.25f);
+
+    private Vector3 start = new Vector3(1, 1, 1);
+    private Vector3 current = new Vector3(0, 0, 0);
     private bool charging = false;
-    float lTime = 0;
-    float scharge;
+    private float lTime = 0;
+    private float scharge;
+
     public float chargeTime = 1f;
     // Update is called once per frame
+
+    private GameObject wipeout;
+
     void Update()
     {
         if (charging)
@@ -53,6 +58,7 @@ public class PlayerScript : MonoBehaviour
         {
             // fire epic
             WipeOut();
+
         }
 
         lTime = 0;
@@ -84,6 +90,7 @@ public class PlayerScript : MonoBehaviour
     void WipeOut()
     { // fire in WaveManager, or spawn wipeout wave
         Debug.Log("Wipeout");
+
     }
 
     IEnumerator ScaleObject()
