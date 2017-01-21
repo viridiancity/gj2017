@@ -47,7 +47,7 @@ public class WipeoutScript : MonoBehaviour {
             // reset wipeout status
             transform.localPosition = startWPos;
             ended = true;
-            Debug.Log("Reset Wipeout");
+            //Debug.Log("Reset Wipeout");
         }
     }
 

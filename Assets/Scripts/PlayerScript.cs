@@ -89,7 +89,7 @@ public class PlayerScript : MonoBehaviour
 
     void WipeOut()
     { // fire in WaveManager, or spawn wipeout wave
-        Debug.Log("Wipeout");
+        //Debug.Log("Wipeout");
         if ( !wipeoutObj.GetComponent<WipeoutScript>().isWipeout )
         {
             isWipeout = true;
@@ -113,6 +113,11 @@ public class PlayerScript : MonoBehaviour
          animator.Play("Right");
       }
 
+   }
+   
+   public void Hit()
+   {
+      animator.Play("Hit");
    }
    
    public void BeginCharging()
