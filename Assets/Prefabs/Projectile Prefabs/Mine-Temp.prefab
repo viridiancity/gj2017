@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223cbd9460244c74a872bd7d78488366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minePrefab: {fileID: 0}
+  explosionPrefab: {fileID: 1234029230125526, guid: 48ec470c3c1bc884fb71204fb953cae9,
+    type: 2}
 --- !u!212 &212407775107333896
 SpriteRenderer:
   m_ObjectHideFlags: 1
