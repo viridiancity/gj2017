@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startpos: {x: 0, y: 0, z: 0}
   targetpos: {x: 0, y: 0, z: 0}
-  torpedo: {fileID: 0}
+  torpedo: {fileID: 1482877028404872, guid: 0ef2053b1c9044f46955ae9c445991c6, type: 2}
 --- !u!212 &212267073388327376
 SpriteRenderer:
   m_ObjectHideFlags: 1
