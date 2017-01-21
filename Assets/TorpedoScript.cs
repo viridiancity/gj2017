@@ -12,8 +12,10 @@ public class TorpedoScript : MonoBehaviour {
     public Rigidbody2D rb2d;
     public CapsuleCollider2D cc2d;
     public TorpedoTargetManager ttm;
+    public CircleCollider2D circc2d;
     public Vector3 target;
     public Vector3 start;
+    public float steeravoidanceradius;
     private float lTime;
 
     // Use this for initialization
@@ -24,6 +26,7 @@ public class TorpedoScript : MonoBehaviour {
         state = STATE.LAUNCH;
         cc2d.enabled = false;
         lTime = 0;
+        circc2d.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -60,15 +63,31 @@ public class TorpedoScript : MonoBehaviour {
                 break;
             case STATE.PEAK:
                 cc2d.enabled = true;
+
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30, 800));
                 state = STATE.DESCENDING;
                 break;
             case STATE.DESCENDING:
-                // steer and avoid barrels
+                // steer away from and avoid barrels
 
-
-
-
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position, steeravoidanceradius);
+                int i = 0;
+                float mindist = 9999;
+                Collider mincol = null;
+                foreach ( Collider c in hitColliders ) {
+                    float dist = Vector3.Distance(c.transform.position, transform.position);
+                    if ( dist < mindist && c.GetComponent<DropProjectile>() != null )
+                    {
+                        mindist = dist;
+                        mincol = c;
+                    }
+                }
+                if ( mincol != null)
+                {
+                    Debug.Log("projectile nearby !");
+                    // avoid !
+                }
+                
                 break;
 
         }
@@ -84,7 +103,6 @@ public class TorpedoScript : MonoBehaviour {
         transform.position = start;
         ythresh = start.y + 5;
     }
-
 
 }
 
