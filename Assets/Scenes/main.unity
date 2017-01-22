@@ -1266,7 +1266,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1652977559794258, guid: 01423a1d8a8a30c4c9cd3c629708fbe2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01423a1d8a8a30c4c9cd3c629708fbe2, type: 2}
@@ -1913,7 +1913,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1906646695569506, guid: 05c25bc712dfd954cbeb59661a5d7c14, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05c25bc712dfd954cbeb59661a5d7c14, type: 2}
@@ -2611,6 +2611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyWaveLevelManager: {fileID: 418467227}
   delay: 3
+  gameOverTitle: {fileID: 0}
 --- !u!1 &1684664615
 GameObject:
   m_ObjectHideFlags: 0

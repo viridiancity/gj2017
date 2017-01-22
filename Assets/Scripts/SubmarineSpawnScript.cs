@@ -34,11 +34,12 @@ public class SubmarineSpawnScript : MonoBehaviour {
         tLastSpawn = Time.time;
         nextminSpawn = tLastSpawn + minSpawnTime;
         nextmaxSpawn = tLastSpawn + maxSpawnTime;
+        sub.transform.position = transform.position;
         // debug spawn
         activeSubs = 0;
         sub = Instantiate(sub);
         active = true;
-        Spawn();
+        //Spawn();
 	}
 	
 	// Update is called once per frame
