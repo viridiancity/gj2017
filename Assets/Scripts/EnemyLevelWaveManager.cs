@@ -80,12 +80,22 @@ public class EnemyLevelWaveManager : MonoBehaviour
       }
       else if (enemyWaveNum == 6)
       {
-         Debug.Log("Spawning Wave 5");
+         Debug.Log("Spawning Wave 6");
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 3f));
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 4f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 5f));
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 7f));
+      }
+      else if (enemyWaveNum == 7)
+      {
+         Debug.Log("Spawning Wave 7");
+         StartCoroutine(DelayedSpawnBoat(MafiaPrefab, 3f));
+         StartCoroutine(DelayedSpawnBoat(MafiaPrefab, 4f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 7f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 9f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 10f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 15f));
       }
 
    }

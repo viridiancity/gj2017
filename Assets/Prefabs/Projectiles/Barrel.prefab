@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 95331816654543880}
   - component: {fileID: 212541383421999448}
   - component: {fileID: 50501744788582276}
-  - component: {fileID: 114738922694853350}
   - component: {fileID: 60406464593076276}
+  - component: {fileID: 114738922694853350}
   - component: {fileID: 114036281812889842}
   m_Layer: 11
   m_Name: Barrel
