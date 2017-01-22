@@ -64,7 +64,7 @@ public class TorpedoScript : MonoBehaviour {
             case STATE.PEAK:
                 cc2d.enabled = true;
 
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30, 800));
+                //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30, 800));
                 state = STATE.DESCENDING;
                 break;
             case STATE.DESCENDING:

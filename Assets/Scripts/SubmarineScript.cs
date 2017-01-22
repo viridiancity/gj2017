@@ -99,11 +99,11 @@ public class SubmarineScript : MonoBehaviour {
             // flip sprite so sgameObject.GetComponent<SpriteRenderer>().flipX = true;ubmarine travels in the right direction
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;            
             // multiply rotation as appropriate to flip sprite direction
-
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         } else
         {
             // right
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            
 
         }
     }
