@@ -46,7 +46,8 @@ public class MusicManager : MonoBehaviour
     {
         playBGM(0);
         cont = Time.time + audioClips[0].length;
-        bool playMain = true;
+        playMain = true;
+        played = true;
     }
 
     public void playWave1()
@@ -56,7 +57,7 @@ public class MusicManager : MonoBehaviour
 
     public void playWave2()
     {
-
+        playBGM(5);
     }
 
     // Update is called once per frame
@@ -68,6 +69,13 @@ public class MusicManager : MonoBehaviour
                 playBGM(5);
             }
         }
+        //if ( played )
+        //{
+            if ( audioSrc.isPlaying == false)
+            {
+                playBGM(5);
+            }
+        //}
    }
 
     void playBGM( int i)
