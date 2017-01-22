@@ -120,8 +120,10 @@ MonoBehaviour:
   rb2d: {fileID: 50289238406046372}
   cc2d: {fileID: 70317809421676470}
   ttm: {fileID: 114809533683653390, guid: 9f1d4a9b773087f4aaae0a461e82bba7, type: 2}
+  circc2d: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
   start: {x: 0, y: 0, z: 0}
+  steeravoidanceradius: 0
 --- !u!212 &212704751145801202
 SpriteRenderer:
   m_ObjectHideFlags: 1
