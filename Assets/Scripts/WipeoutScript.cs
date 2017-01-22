@@ -1,64 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WipeoutScript : MonoBehaviour {
+public class WipeoutScript : MonoBehaviour
+{
+   private Vector3 current;
+   public Vector3 endWPos = new Vector3(1, 6.5f, 1);
+   public Vector3 startWPos = new Vector3(1, -11f, 1);
+   private float lTime = 0;
+   public bool isWipeout = false;
+   public bool started = false;
+   public bool ended = false;
 
-    private Vector3 current;
-    public Vector3 endWPos   = new Vector3(1, 6.5f, 1);
-    public Vector3 startWPos = new Vector3(1, -11f, 1);
-    private float lTime = 0;
-    public bool isWipeout = false;
-    public bool started   = false;
-    public bool ended     = false;
+   public int numKills;
+   public GameObject crownGlow;
 
    public float upForce;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+   // Update is called once per frame
+   void Update()
+   {
+      if (isWipeout && !ended)
+      {
+         Wipeout();
+      }
 
-        if ( isWipeout && !ended)
-        {
-            Wipeout();
-        }
+   }
 
-	}
+   public void startWipeout()
+   {
+      if (numKills >= 3)
+      {
+         this.isWipeout = true;
+         numKills = 0;
+         crownGlow.SetActive(false);
+      }
 
-    public void startWipeout()
-    {
-        this.isWipeout = true;
-    }
+   }
 
-    public void Wipeout()
-    {
-        //Debug.Log("Wipeout!!_!!!!!?!");
-        
-        current = Vector3.Lerp(startWPos, endWPos, lTime);
-        transform.localPosition = current;
-        lTime += Time.deltaTime;
+   public void Wipeout()
+   {
+      current = Vector3.Lerp(startWPos, endWPos, lTime);
+      transform.localPosition = current;
+      lTime += Time.deltaTime;
 
-        if (transform.localPosition.y >= endWPos.y)
-        {
-            // reset wipeout status
-            transform.localPosition = startWPos;
-            ended = true;
-            //Debug.Log("Reset Wipeout");
-        }
-    }
+      if (transform.localPosition.y >= endWPos.y)
+      {
+         // reset wipeout status
+         transform.localPosition = startWPos;
+         ended = true;
+         //Debug.Log("Reset Wipeout");
+      }
 
-    public bool isEnded() { return ended; }
+   }
 
-    public void reset()
-    {
-        isWipeout = false;
-        lTime = 0;
-        ended = false;
-    }
+   public void IncrementKills()
+   {
+      numKills++;
+
+      if (numKills >= 3)
+         crownGlow.SetActive(true);
+   }
+
+   public bool isEnded() { return ended; }
+
+   public void reset()
+   {
+      isWipeout = false;
+      lTime = 0;
+      ended = false;
+   }
 
    private void OnTriggerEnter2D(Collider2D collision)
    {

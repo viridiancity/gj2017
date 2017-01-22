@@ -91,7 +91,7 @@ public class WavesManager : MonoBehaviour
       {
          Vector3 instantiatePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-         playerScript.ChangeState(Input.mousePosition.x / Screen.width);
+         playerScript.ChangeStance(Input.mousePosition.x / Screen.width);
 
          instantiatePosition = new Vector3(instantiatePosition.x, instantiatePosition.y, 0f);
          if (s == "normal")

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212000011626009684}
   - component: {fileID: 114034703753775476}
   - component: {fileID: 65791662704709832}
+  - component: {fileID: 95272813754426206}
+  - component: {fileID: 114894683575535380}
   m_Layer: 0
   m_Name: Poseidon
   m_TagString: Player
@@ -36,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013748813380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: -8.18, z: 0.07548735}
+  m_LocalPosition: {x: -0.32, y: -6.61, z: 0.07548735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,6 +56,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.93, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95272813754426206
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013748813380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bdfe5633b2c6f1a4a89ce742c5c5e1d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114034703753775476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,9 +87,24 @@ MonoBehaviour:
   health: 100
   endScale: {x: 1.25, y: 1.25, z: 1.25}
   chargeTime: 1
-  wipeoutObj: {fileID: 1811866239705954, guid: 673e182fde8e858408c8652594507083, type: 2}
+  wipeoutObj: {fileID: 0}
   endWPos: {x: 0, y: 6.5, z: 1}
   startWPos: {x: 0, y: -11, z: 1}
+--- !u!114 &114894683575535380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013748813380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f199417aeab569c4a843d17efcffd443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNormalPrefab: {fileID: 1861044780400840, guid: 99570fe2a457dda4ab706903ceb0b494,
+    type: 2}
+  waveStrongPrefab: {fileID: 1043235742205458, guid: 20e437e97ed3e5c4bb2cd8f859db1c49,
+    type: 2}
 --- !u!212 &212000011626009684
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,9 +134,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 84552767
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 31900c9aefdd9aa429bc0e0be5da73f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 356ea68bb0d978045b4ad2703d918f83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

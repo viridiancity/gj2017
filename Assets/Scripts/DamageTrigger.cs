@@ -24,7 +24,11 @@ public class DamageTrigger : MonoBehaviour
           tag == "Torpedo" ||
           tag == "CementLegGuy")
       {
-         player.health -= 10;
+         if (player.health > 0)
+         {
+            player.health -= 10;
+         }
+            
          player.Hit();
          Destroy(collision.gameObject);
       }

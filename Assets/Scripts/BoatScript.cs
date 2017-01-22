@@ -5,6 +5,12 @@ using UnityEngine;
 public class BoatScript : MonoBehaviour
 {
    public GameObject BoatsplosionPrefab;
+   public WipeoutScript wipeoutScript;
+
+   private void Start()
+   {
+      wipeoutScript = GameObject.FindObjectOfType<WipeoutScript>();
+   }
 
    private void OnCollisionEnter2D(Collision2D collision)
    {
@@ -20,6 +26,7 @@ public class BoatScript : MonoBehaviour
 
          Vector3 instantiatePos = new Vector3(transform.position.x, transform.position.y + 1.15f, 0f);
          Instantiate(BoatsplosionPrefab, instantiatePos, Quaternion.identity);
+         wipeoutScript.IncrementKills();
          Destroy(gameObject);
       }
    }
