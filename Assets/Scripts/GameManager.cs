@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
    public void GameOver()
    {
+      EnemyLevelWaveManager.instance.CancelInvoke("RepeatSpawn");
       enemyWaveLevelManager.SetActive(false);
       gameOverTitle.SetActive(true);
       restartTitle.SetActive(true);
