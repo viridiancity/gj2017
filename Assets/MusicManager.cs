@@ -16,8 +16,11 @@ public class MusicManager : MonoBehaviour
       }
    }
 
-   public AudioClip[] audioClips;
-   AudioSource audioSrc;
+    public AudioClip[] audioClips;
+    public AudioClip[] bgm;
+    public AudioSource audioSrc;
+
+    private bool playing;
 
    // Use this for initialization
    void Start()
@@ -25,9 +28,45 @@ public class MusicManager : MonoBehaviour
       audioSrc = GetComponent<AudioSource>();
    }
 
-   // Update is called once per frame
-   void Update()
+    public void playTitle()
+    {
+
+
+        audioSrc.clip = audioClips[6];
+        audioSrc.Play();
+        
+    }
+
+    public void playTute()
+    {
+        playBGM(0);
+    }
+
+    public void playWave1()
+    {
+
+    }
+
+    public void playWave2()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
    {
 
    }
+
+    void playBGM( int i)
+    {
+        if (audioSrc.isPlaying)
+        {
+            audioSrc.Stop();
+        }
+
+        audioSrc.clip = audioClips[i];
+        audioSrc.Play();
+    }
+
 }
