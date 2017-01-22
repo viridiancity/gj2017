@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
    private bool charging = false;
    private float lTime = 0;
    private float scharge;
+   WavesManager wavesManager;
 
    public float chargeTime = 1f;
    // Update is called once per frame
@@ -24,12 +25,11 @@ public class PlayerScript : MonoBehaviour
    private bool isWipeout = false;
    private Animator animator;
 
-
-
    private void Start()
    {
       wipeoutScript = wipeoutObj.GetComponent<WipeoutScript>();
       animator = GetComponent<Animator>();
+      wavesManager = GetComponent<WavesManager>();
    }
 
    void Update()
@@ -88,10 +88,10 @@ public class PlayerScript : MonoBehaviour
 
    }
 
-   void OnMouseOver()
-   { // mouse over not really triggered on touch controls
+   //void OnMouseOver()
+   //{ // mouse over not really triggered on touch controls
 
-   }
+   //}
 
    void WipeOut()
    { // fire in WaveManager, or spawn wipeout wave
@@ -104,7 +104,7 @@ public class PlayerScript : MonoBehaviour
 
    }
 
-   public void ChangeState(float clickThirds)
+   public void ChangeStance(float clickThirds)
    {
       if (clickThirds < 0.33f)
       {
@@ -123,7 +123,15 @@ public class PlayerScript : MonoBehaviour
 
    public void Hit()
    {
-      animator.Play("Hit");
+      if (health > 0)
+         animator.Play("Hit");
+      else if (health <= 0)
+      {
+         GameManager.instance.GameOver();
+         animator.Play("Death");
+         wavesManager.enabled = false;
+      }
+         
    }
 
    public void BeginCharging()

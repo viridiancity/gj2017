@@ -15,6 +15,7 @@ public class EnemyLevelWaveManager : MonoBehaviour
          return _instance;
       }
    }
+
    public Transform spawnPosition;
    public GameObject BarrelBoatPrefab;
    public GameObject GarbageBoatPrefab;

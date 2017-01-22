@@ -1741,7 +1741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.26, y: 14.7}
+  m_AnchoredPosition: {x: 0, y: 14.7}
   m_SizeDelta: {x: 5.3, y: 5.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &983952993
@@ -2609,7 +2609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae78af58f4d3fdc4da0ff80e272f5764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveLevelmanager: {fileID: 418467227}
+  enemyWaveLevelManager: {fileID: 418467227}
   delay: 3
 --- !u!1 &1684664615
 GameObject:
