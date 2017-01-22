@@ -19,12 +19,17 @@ public class GameManager : MonoBehaviour
    public GameObject enemyWaveLevelManager;
    public float delay = 3f;
 
+   public GameObject gameOverTitle;
+
    PlayerScript playerScript;
 
    public void StartGame()
    {
       playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
       Invoke("DelayedStartGame", delay);
+
+      if (!gameOverTitle)
+         Debug.LogError("Game Over title not set");
    }
 
    void DelayedStartGame()
@@ -35,7 +40,7 @@ public class GameManager : MonoBehaviour
    public void GameOver()
    {
       enemyWaveLevelManager.SetActive(false);
-
+      gameOverTitle.SetActive(true);
    }
 
 }
