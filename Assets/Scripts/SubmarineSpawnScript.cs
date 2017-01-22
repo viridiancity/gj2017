@@ -38,7 +38,7 @@ public class SubmarineSpawnScript : MonoBehaviour {
         activeSubs = 0;
         sub = Instantiate(sub);
         active = true;
-        Spawn();
+        //Spawn();
 	}
 	
 	// Update is called once per frame
