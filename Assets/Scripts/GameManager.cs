@@ -23,13 +23,20 @@ public class GameManager : MonoBehaviour
    public GameObject gameOverTitle;
    public GameObject restartTitle;
 
+   public GameObject soundManager;
+
    PlayerScript playerScript;
+
+    void Start()
+    {
+        soundManager.GetComponent<MusicManager>().playTitle(); 
+    }
 
    public void StartGame()
    {
       playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
       Invoke("DelayedStartGame", delay);
-
+      soundManager.GetComponent<MusicManager>().playTute();
       if (!gameOverTitle)
          Debug.LogError("Game Over title not set");
    }

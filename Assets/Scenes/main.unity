@@ -3029,6 +3029,7 @@ MonoBehaviour:
   delay: 3
   gameOverTitle: {fileID: 1748785986}
   restartTitle: {fileID: 52101963}
+  soundManager: {fileID: 1685569432}
 --- !u!1 &1684664615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3213,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 751507c7276558c408fbb05fa60f534a, type: 3}
   - {fileID: 8300000, guid: 74f716ed667024b4cbac34e9aa2ba2b3, type: 3}
   - {fileID: 8300000, guid: 068d6960a3aeba24fa35ee533662813e, type: 3}
+  - {fileID: 8300000, guid: 024e71abad6d73a44ab5f82dad816406, type: 3}
+  bgm: []
 --- !u!4 &1685569435
 Transform:
   m_ObjectHideFlags: 0
