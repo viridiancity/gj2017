@@ -64,7 +64,7 @@ public class MusicManager : MonoBehaviour
    {
         if ( playMain && !played)
         {
-            if ( Time.time < cont ) {
+            if ( Time.time > cont ) {
                 playBGM(5);
             }
         }
