@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
    public float delay = 3f;
 
    public GameObject gameOverTitle;
+   public GameObject restartTitle;
 
    PlayerScript playerScript;
 
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
    {
       enemyWaveLevelManager.SetActive(false);
       gameOverTitle.SetActive(true);
+      restartTitle.SetActive(true);
+   }
+
+   public void Restart()
+   {
+      SceneManager.LoadScene(0);
    }
 
 }

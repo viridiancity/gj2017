@@ -13,6 +13,8 @@ public class WipeoutScript : MonoBehaviour
    public bool started = false;
    public bool ended = false;
 
+   public Animator wipeoutAnimator;
+
    public int numKills;
    public GameObject crownGlow;
 
@@ -32,6 +34,7 @@ public class WipeoutScript : MonoBehaviour
    {
       if (numKills >= 3)
       {
+         wipeoutAnimator.Play("Wipeout");
          this.isWipeout = true;
          numKills = 0;
          crownGlow.SetActive(false);

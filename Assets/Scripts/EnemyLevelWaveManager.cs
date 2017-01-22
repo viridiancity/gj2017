@@ -72,7 +72,7 @@ public class EnemyLevelWaveManager : MonoBehaviour
       else if (enemyWaveNum == 5)
       {
          Debug.Log("Spawning Wave 5");
-         StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 3f));
+         
          StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 4f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 5f));
          StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 6f));
@@ -80,14 +80,38 @@ public class EnemyLevelWaveManager : MonoBehaviour
       }
       else if (enemyWaveNum == 6)
       {
-         Debug.Log("Spawning Wave 5");
+         Debug.Log("Spawning Wave 6");
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 3f));
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 4f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 5f));
          StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 6f));
          StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 7f));
       }
+      else if (enemyWaveNum == 7)
+      {
+         Debug.Log("Spawning Wave 7");
 
+         StartCoroutine(DelayedSpawnBoat(MafiaPrefab, 3f));
+         StartCoroutine(DelayedSpawnBoat(MafiaPrefab, 4f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 7f));
+         StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 9f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 10f));
+         StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 15f));
+      }
+      else if (enemyWaveNum == 8)
+      {
+         Debug.Log("Spawning Infinite Wave");
+
+         PlayerScript playerScript = GameObject.FindObjectOfType<PlayerScript>();
+
+         while (playerScript.health > 0)
+         {
+            int i = Random.Range(1, 6);
+            StartCoroutine(RandomSpawn(i));
+
+         }
+
+      }
    }
 
    IEnumerator DelayedSpawnBoat(GameObject prefab, float delay)
@@ -97,4 +121,29 @@ public class EnemyLevelWaveManager : MonoBehaviour
       GameObject boat = Instantiate(prefab, spawnPosition.position, Quaternion.identity);
       boats.Add(boat);
    }
+
+   IEnumerator RandomSpawn(int delay)
+   {
+      yield return new WaitForSeconds(delay);
+      int randNum = Random.Range(1, 4);
+
+      switch (randNum)
+      {
+         case 1:
+            StartCoroutine(DelayedSpawnBoat(BarrelBoatPrefab, 1f));
+            break;
+         case 2:
+            StartCoroutine(DelayedSpawnBoat(GarbageBoatPrefab, 1f));
+            break;
+         case 3:
+            StartCoroutine(DelayedSpawnBoat(MineBoatPrefab, 1f));
+            break;
+         case 4:
+            StartCoroutine(DelayedSpawnBoat(MafiaPrefab, 1f));
+            break;
+         default:
+            break;
+      }
+   }
+
 }
