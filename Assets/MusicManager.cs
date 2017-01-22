@@ -22,10 +22,15 @@ public class MusicManager : MonoBehaviour
 
     private bool playing;
 
-   // Use this for initialization
-   void Start()
+    private float cont;
+    private bool playMain;
+    private bool played;
+    // Use this for initialization
+    void Start()
    {
       audioSrc = GetComponent<AudioSource>();
+        playMain = false;
+        played = false;
    }
 
     public void playTitle()
@@ -40,6 +45,8 @@ public class MusicManager : MonoBehaviour
     public void playTute()
     {
         playBGM(0);
+        cont = Time.time + audioClips[0].length;
+        bool playMain = true;
     }
 
     public void playWave1()
@@ -55,7 +62,12 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
    {
-
+        if ( playMain && !played)
+        {
+            if ( Time.time < cont ) {
+                playBGM(5);
+            }
+        }
    }
 
     void playBGM( int i)
