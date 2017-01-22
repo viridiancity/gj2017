@@ -29,6 +29,7 @@ public class DropProjectile : MonoBehaviour
 
       GameObject projectile = Instantiate(projectilePrefab, instantiatePos, Quaternion.identity) as GameObject;
       projectile.GetComponent<Rigidbody2D>().AddTorque(3f);
+      projectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -8f));
       StartCoroutine(DelayThenAttack());
 
    }
