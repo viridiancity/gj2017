@@ -95,8 +95,12 @@ public class WipeoutScript : MonoBehaviour
    IEnumerator DelayedAddForce(float delay, Collider2D collision)
    {
       yield return new WaitForSeconds(delay);
-      Rigidbody2D rb2d = collision.transform.GetComponent<Rigidbody2D>();
-      rb2d.AddForce(new Vector2(0f, upForce));
+
+      if (collision != null)
+      {
+         Rigidbody2D rb2d = collision.transform.GetComponent<Rigidbody2D>();
+         rb2d.AddForce(new Vector2(0f, upForce));
+      }
    }
 
 }

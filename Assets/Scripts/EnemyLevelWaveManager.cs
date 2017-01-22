@@ -104,14 +104,14 @@ public class EnemyLevelWaveManager : MonoBehaviour
 
          PlayerScript playerScript = GameObject.FindObjectOfType<PlayerScript>();
 
-         while (playerScript.health > 0)
-         {
-            int i = Random.Range(1, 6);
-            StartCoroutine(RandomSpawn(i));
-
-         }
-
+         InvokeRepeating("RepeatSpawn", 0f, 3f);
       }
+   }
+
+   void RepeatSpawn()
+   {
+      int i = Random.Range(1, 6);
+      StartCoroutine(RandomSpawn(i));
    }
 
    IEnumerator DelayedSpawnBoat(GameObject prefab, float delay)
